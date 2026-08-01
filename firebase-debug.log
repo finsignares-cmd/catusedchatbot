@@ -1,0 +1,187 @@
+[debug] [2026-08-01T19:12:02.706Z] ----------------------------------------------------------------------
+[debug] [2026-08-01T19:12:02.709Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HOME\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-08-01T19:12:02.709Z] CLI Version:   15.25.1
+[debug] [2026-08-01T19:12:02.709Z] Platform:      win32
+[debug] [2026-08-01T19:12:02.709Z] Node Version:  v26.5.1
+[debug] [2026-08-01T19:12:02.709Z] Detected Agent: unknown
+[debug] [2026-08-01T19:12:02.710Z] Time:          Sat Aug 01 2026 14:12:02 GMT-0500 (Colombia Standard Time)
+[debug] [2026-08-01T19:12:02.710Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\HOME\Documents\Personal\Flutterflow Projects\CatUsedChatBot
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-08-01T19:13:06.539Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-01T19:13:06.539Z] > authorizing via signed-in user (finsignares@gmail.com)
+[debug] [2026-08-01T19:13:06.551Z] Checked if tokens are valid: false, expires at: 1785601688521
+[debug] [2026-08-01T19:13:06.552Z] Checked if tokens are valid: false, expires at: 1785601688521
+[debug] [2026-08-01T19:13:06.552Z] > refreshing access token with scopes: []
+[debug] [2026-08-01T19:13:06.554Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-08-01T19:13:06.554Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-01T19:13:06.805Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-08-01T19:13:06.805Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-01T19:13:06.816Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz [none]
+[debug] [2026-08-01T19:13:07.294Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz 200
+[debug] [2026-08-01T19:13:07.294Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz {"projectId":"e-waste-a-i-clients-qhamrz","projectNumber":"506681330606","displayName":"CatUsedChatBot","name":"projects/e-waste-a-i-clients-qhamrz","resources":{"hostingSite":"e-waste-a-i-clients-qhamrz"},"state":"ACTIVE","labels":{"firebase":"enabled","firebase/storage-default-bucket":"created"},"etag":"1_91a84a93-f6fd-44ce-9975-48b5af651f87"}
+[info] i  Using project e-waste-a-i-clients-qhamrz (CatUsedChatBot) . 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-08-01T19:13:07.303Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:07.303Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:07.304Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/firestore.googleapis.com [none]
+[debug] [2026-08-01T19:13:07.304Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/firestore.googleapis.com  x-goog-user-project=e-waste-a-i-clients-qhamrz
+[debug] [2026-08-01T19:13:08.105Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/firestore.googleapis.com 200
+[debug] [2026-08-01T19:13:08.105Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[debug] [2026-08-01T19:13:08.112Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:08.112Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:08.112Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases [none]
+[debug] [2026-08-01T19:13:08.995Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases 200
+[debug] [2026-08-01T19:13:08.996Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases {"databases":[{"name":"projects/e-waste-a-i-clients-qhamrz/databases/(default)","uid":"fb3c4b2c-4271-424b-9e56-0b88956e85e5","createTime":"2026-07-24T17:26:53.450125Z","updateTime":"2026-07-24T17:26:53.450125Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-08-01T18:13:09.420101Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IPqO68ORgJYDMNO1lJqO7JUD"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2026-08-01T19:13:11.238Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:11.239Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:11.239Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/releases pageSize=10&pageToken=
+[debug] [2026-08-01T19:13:11.644Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/releases 200
+[debug] [2026-08-01T19:13:11.645Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/releases {"releases":[{"name":"projects/e-waste-a-i-clients-qhamrz/releases/cloud.firestore","rulesetName":"projects/e-waste-a-i-clients-qhamrz/rulesets/6dd4d565-0786-4512-bf28-e18a40053e11","createTime":"2026-07-24T20:00:19.849413Z","updateTime":"2026-07-25T10:42:23.847108Z"},{"name":"projects/e-waste-a-i-clients-qhamrz/releases/firebase.storage/e-waste-a-i-clients-qhamrz.firebasestorage.app","rulesetName":"projects/e-waste-a-i-clients-qhamrz/rulesets/a9d25436-0b3e-4eac-b2b1-3a4b76460204","createTime":"2026-07-24T19:44:02.927924Z","updateTime":"2026-07-24T19:44:02.927924Z"}]}
+[debug] [2026-08-01T19:13:11.656Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:11.656Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:11.656Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/rulesets/6dd4d565-0786-4512-bf28-e18a40053e11 [none]
+[debug] [2026-08-01T19:13:11.844Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/rulesets/6dd4d565-0786-4512-bf28-e18a40053e11 200
+[debug] [2026-08-01T19:13:11.844Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/rulesets/6dd4d565-0786-4512-bf28-e18a40053e11 [omitted]
+[info] i  Downloaded the existing Firestore Security Rules from the Firebase console 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2026-08-01T19:13:16.226Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:16.226Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:16.226Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:16.226Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:16.226Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2026-08-01T19:13:16.227Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2026-08-01T19:13:17.030Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2026-08-01T19:13:17.030Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2026-08-01T19:13:17.046Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2026-08-01T19:13:17.046Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/-/indexes {"indexes":[{"name":"projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/chatMessages/indexes/CICAgOjXh4EK","queryScope":"COLLECTION","fields":[{"fieldPath":"sessionId","order":"ASCENDING"},{"fieldPath":"createdAt","order":"ASCENDING"},{"fieldPath":"__name__","order":"ASCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/e-waste-a-i-clients-qhamrz/databases/(default)/collectionGroups/chatMessages/indexes/CICAgJiUpoMK","queryScope":"COLLECTION_GROUP","fields":[{"fieldPath":"sessionId","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"}]}
+[info] i  Downloaded the existing Firestore indexes from the Firebase console 
+[info] +  Wrote firestore.rules 
+[info] +  Wrote firestore.indexes.json 
+[info] 
+=== Functions Setup
+[debug] [2026-08-01T19:13:17.052Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-01T19:13:17.053Z] > authorizing via signed-in user (finsignares@gmail.com)
+[debug] [2026-08-01T19:13:17.053Z] [iam] checking project e-waste-a-i-clients-qhamrz for permissions ["firebase.projects.get"]
+[debug] [2026-08-01T19:13:17.054Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.054Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.054Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz:testIamPermissions [none]
+[debug] [2026-08-01T19:13:17.054Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz:testIamPermissions  x-goog-user-project=e-waste-a-i-clients-qhamrz
+[debug] [2026-08-01T19:13:17.054Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-08-01T19:13:17.564Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz:testIamPermissions 200
+[debug] [2026-08-01T19:13:17.564Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-08-01T19:13:17.565Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.565Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.565Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.565Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:13:17.565Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-08-01T19:13:17.565Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/cloudfunctions.googleapis.com  x-goog-user-project=e-waste-a-i-clients-qhamrz
+[debug] [2026-08-01T19:13:17.566Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/runtimeconfig.googleapis.com [none]
+[debug] [2026-08-01T19:13:17.566Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/runtimeconfig.googleapis.com  x-goog-user-project=e-waste-a-i-clients-qhamrz
+[debug] [2026-08-01T19:13:18.247Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/runtimeconfig.googleapis.com 200
+[debug] [2026-08-01T19:13:18.248Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2026-08-01T19:13:18.311Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/cloudfunctions.googleapis.com 200
+[debug] [2026-08-01T19:13:18.311Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/e-waste-a-i-clients-qhamrz/services/cloudfunctions.googleapis.com [omitted]
+[info] 
+Detected existing codebase(s): default
+
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[error] Invalid codebase name. Codebase must be less than 64 characters and can contain only lowercase letters, numeric characters, underscores, and dashes.
+[info] +  Wrote catusedchatbot/.eslintrc.js 
+[info] +  Wrote catusedchatbot/package.json 
+[info] +  Wrote catusedchatbot/index.js 
+[info] +  Wrote catusedchatbot/.gitignore 
+[info] 
+=== Hosting Setup
+[debug] [2026-08-01T19:14:45.090Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:14:45.090Z] Checked if tokens are valid: true, expires at: 1785615185806
+[debug] [2026-08-01T19:14:45.090Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz [none]
+[debug] [2026-08-01T19:14:45.549Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz 200
+[debug] [2026-08-01T19:14:45.550Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/e-waste-a-i-clients-qhamrz {"projectId":"e-waste-a-i-clients-qhamrz","projectNumber":"506681330606","displayName":"CatUsedChatBot","name":"projects/e-waste-a-i-clients-qhamrz","resources":{"hostingSite":"e-waste-a-i-clients-qhamrz"},"state":"ACTIVE","labels":{"firebase":"enabled","firebase/storage-default-bucket":"created"},"etag":"1_91a84a93-f6fd-44ce-9975-48b5af651f87"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] 
+[info] i  Detected a .git folder at C:\Users\HOME\Documents\Personal\Flutterflow Projects\CatUsedChatBot 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=472077169&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2026-08-01T19:15:01.398Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2026-08-01T19:15:01.399Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2026-08-01T19:15:02.270Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2026-08-01T19:15:02.271Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2026-08-01T19:15:02.276Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2026-08-01T19:15:02.736Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2026-08-01T19:15:02.737Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"finsignares-cmd","id":311848724,"node_id":"U_kgDOEpZvFA","avatar_url":"https://avatars.githubusercontent.com/u/311848724?v=4","gravatar_id":"","url":"https://api.github.com/users/finsignares-cmd","html_url":"https://github.com/finsignares-cmd","followers_url":"https://api.github.com/users/finsignares-cmd/followers","following_url":"https://api.github.com/users/finsignares-cmd/following{/other_user}","gists_url":"https://api.github.com/users/finsignares-cmd/gists{/gist_id}","starred_url":"https://api.github.com/users/finsignares-cmd/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/finsignares-cmd/subscriptions","organizations_url":"https://api.github.com/users/finsignares-cmd/orgs","repos_url":"https://api.github.com/users/finsignares-cmd/repos","events_url":"https://api.github.com/users/finsignares-cmd/events{/privacy}","received_events_url":"https://api.github.com/users/finsignares-cmd/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":1,"public_gists":0,"followers":0,"following":0,"created_at":"2026-08-01T17:23:00Z","updated_at":"2026-08-01T17:23:00Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":100,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as finsignares-cmd 
+[info] 
+[debug] [2026-08-01T19:15:42.008Z] >>> [apiv2][query] GET https://api.github.com/repos/finsignares-cmd/catusedchatbot/actions/secrets/public-key type=owner
+[debug] [2026-08-01T19:15:42.343Z] <<< [apiv2][status] GET https://api.github.com/repos/finsignares-cmd/catusedchatbot/actions/secrets/public-key 404
+[debug] [2026-08-01T19:15:42.344Z] <<< [apiv2][body] GET https://api.github.com/repos/finsignares-cmd/catusedchatbot/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2026-08-01T19:19:32.190Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\HOME\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:509:20)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1327:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:284:20)
+    at ReadStream.emit (node:events:521:24)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:509:20)
+    at addChunk (node:internal/streams/readable:568:12)
+[error] 
+[error] Error: An unexpected error has occurred.
