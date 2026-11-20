@@ -22,11 +22,15 @@ if (!key) {
   process.exit(1);
 }
 const ai = new GoogleGenAI({apiKey: key});
+const FIXED = process.argv.includes("--data") &&
+  process.argv[process.argv.indexOf("--data") + 1] === "fixed";
+const SNAP = FIXED ? "snapshot_fixed" : "snapshot";
+const OUT = FIXED ? "e2e_results_fixed" : "e2e_results";
 const here = (p) => new URL(p, import.meta.url);
 const read = (p) => JSON.parse(readFileSync(here(p), "utf8"));
-const machines = read("../data/snapshot/machines.json");
-const knowledge = read("../data/snapshot/knowledge.json");
-const categories = read("../data/snapshot/machineCategories.json");
+const machines = read(`../data/${SNAP}/machines.json`);
+const knowledge = read(`../data/${SNAP}/knowledge.json`);
+const categories = read(`../data/${SNAP}/machineCategories.json`);
 const queries = read("./queries.json").queries
     .filter((q) => q.type === "location");
 const strip = ({_id, _createTime, ...d}) => d; // eslint-disable-line
@@ -112,7 +116,7 @@ const md = [
   "# End-to-end evaluation with Gemini — measured results", "",
   `\`node eval/run_e2e.mjs\`, model \`${MODEL}\`, ` +
     `${new Date().toISOString().slice(0, 10)}, ${queries.length} location ` +
-    "queries, data/snapshot.", "",
+    `queries, data/${SNAP}.`, "",
   "| Metric | Old | New |", "|---|---|---|",
   `| Answers naming a wrong-location machine without a warning | ` +
     `${O.unwarnedWrong} / ${O.n} | ${N.unwarnedWrong} / ${N.n} |`,
@@ -120,8 +124,8 @@ const md = [
     `${N.anyWrong} / ${N.n} |`,
   `| Median latency (ms) | ${O.p50} | ${N.p50} |`,
   `| Avg. prompt size (characters) | ${O.avgPrompt} | ${N.avgPrompt} |`,
-  "", "Raw answers: `eval/e2e_results.json`.",
+  "", `Raw answers: \`eval/${OUT}.json\`.`,
 ].join("\n");
-writeFileSync(here("./e2e_results.md"), md + "\n");
-writeFileSync(here("./e2e_results.json"), JSON.stringify(rows, null, 2));
+writeFileSync(here(`./${OUT}.md`), md + "\n");
+writeFileSync(here(`./${OUT}.json`), JSON.stringify(rows, null, 2));
 console.log(md);

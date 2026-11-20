@@ -1,0 +1,657 @@
+{
+  "date": "2026-11-20",
+  "old": {
+    "queries": 24,
+    "precision": 0.1893939393939394,
+    "recall": 0.9803921568627451,
+    "exactMatch": 5,
+    "wrongLocationMachines": 122,
+    "locationQueriesWithWrongMachine": 10,
+    "locationQueries": 16,
+    "avgMachinesInContext": 11,
+    "avgContextChars": 13750.125,
+    "avgKnowledgeDocs": 29,
+    "avgRetrievalMs": 0.06543908333333331
+  },
+  "new": {
+    "queries": 24,
+    "precision": 0.9622641509433962,
+    "recall": 1,
+    "exactMatch": 23,
+    "wrongLocationMachines": 0,
+    "locationQueriesWithWrongMachine": 0,
+    "locationQueries": 16,
+    "avgMachinesInContext": 2.2083333333333335,
+    "avgContextChars": 1012.2916666666666,
+    "avgKnowledgeDocs": 1.375,
+    "avgRetrievalMs": 0.1848975833333333
+  },
+  "perQuery": [
+    {
+      "id": "Q01",
+      "text": "Do you have machines in Arizona?",
+      "expected": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q02",
+      "text": "machines in arizona",
+      "expected": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "new": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q03",
+      "text": "What equipment do you have in Miami?",
+      "expected": [
+        "CAT336-2023-FL"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT336-2023-FL"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q04",
+      "text": "Equipos disponibles en Miami",
+      "expected": [
+        "CAT336-2023-FL"
+      ],
+      "old": [],
+      "new": [
+        "CAT336-2023-FL"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q05",
+      "text": "¿Qué excavadoras hay en Arizona?",
+      "expected": [
+        "CAT349-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT349-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q06",
+      "text": "Show me wheel loaders in Arizona",
+      "expected": [
+        "CAT950-2022-AZ"
+      ],
+      "old": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "new": [
+        "CAT950-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q07",
+      "text": "Any dozers in Wyoming?",
+      "expected": [
+        "CATD8-2022-WY"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CATD8-2022-WY"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q08",
+      "text": "Do you have anything in Georgia?",
+      "expected": [
+        "CAT420-2022-GA"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT420-2022-GA"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q09",
+      "text": "machines in Texas",
+      "expected": [
+        "CAT320-2022-TX",
+        "CAT150-2021-TX"
+      ],
+      "old": [
+        "CAT320-2022-TX",
+        "CAT150-2021-TX"
+      ],
+      "new": [
+        "CAT320-2022-TX",
+        "CAT150-2021-TX"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q10",
+      "text": "¿Tienen equipos en Colorado?",
+      "expected": [
+        "CATD5-2023-CO",
+        "CAT140-2022-CO"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CATD5-2023-CO",
+        "CAT140-2022-CO"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q11",
+      "text": "Excavators in North Carolina",
+      "expected": [
+        "CAT330-2023-NC"
+      ],
+      "old": [
+        "CAT330-2023-NC"
+      ],
+      "new": [
+        "CAT330-2023-NC"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q12",
+      "text": "What do you have in Nevada?",
+      "expected": [
+        "CATD6-2021-NV",
+        "CAT966-2023-NV"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT966-2023-NV",
+        "CATD6-2021-NV"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q13",
+      "text": "Do you have a backhoe in Florida?",
+      "expected": [],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [],
+      "flagged": []
+    },
+    {
+      "id": "Q14",
+      "text": "Utah wheel loaders",
+      "expected": [
+        "CAT980-2021-UT"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT980-2021-UT"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q15",
+      "text": "machines in AZ",
+      "expected": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "new": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q16",
+      "text": "¿Qué hay disponible en Phoenix?",
+      "expected": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT349-2022-AZ",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q17",
+      "text": "Specs of the CAT 349",
+      "expected": [
+        "CAT349-2022-AZ"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT349-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q18",
+      "text": "¿Cuántas horas tiene la CAT D8?",
+      "expected": [
+        "CATD8-2022-WY"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CATD8-2022-WY"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q19",
+      "text": "ficha técnica de la cat 966",
+      "expected": [
+        "CAT966-2023-NV"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT966-2023-NV"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q20",
+      "text": "Show me your excavators",
+      "expected": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CAT340-2022-AZ"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CAT340-2022-AZ"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q21",
+      "text": "motoniveladoras disponibles",
+      "expected": [
+        "CAT140-2022-CO",
+        "CAT150-2021-TX"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT140-2022-CO",
+        "CAT150-2021-TX"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q22",
+      "text": "What machines do you have?",
+      "expected": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q23",
+      "text": "Why do maintenance records matter?",
+      "expected": [],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [
+        "CAT140-2022-CO",
+        "CAT150-2021-TX"
+      ],
+      "flagged": []
+    },
+    {
+      "id": "Q24",
+      "text": "hello",
+      "expected": [],
+      "old": [
+        "CAT336-2023-FL",
+        "CAT349-2022-AZ",
+        "CATD5-2023-CO",
+        "CAT140-2022-CO",
+        "CAT330-2023-NC",
+        "CAT320-2022-TX",
+        "CATD8-2022-WY",
+        "CAT950-2022-AZ",
+        "CAT340-2022-AZ",
+        "CAT420-2022-GA",
+        "CAT966-2023-NV",
+        "CAT980-2021-UT",
+        "CAT150-2021-TX",
+        "CATD6-2021-NV"
+      ],
+      "new": [],
+      "flagged": []
+    }
+  ]
+}

@@ -11,7 +11,7 @@
     "avgMachinesInContext": 11.166666666666666,
     "avgContextChars": 13975.458333333334,
     "avgKnowledgeDocs": 30,
-    "avgRetrievalMs": 0.0704931458333335
+    "avgRetrievalMs": 0.06697414583333344
   },
   "new": {
     "queries": 24,
@@ -24,7 +24,7 @@
     "avgMachinesInContext": 2.0833333333333335,
     "avgContextChars": 1156.6666666666667,
     "avgKnowledgeDocs": 1.2083333333333333,
-    "avgRetrievalMs": 0.20863612499999995
+    "avgRetrievalMs": 0.1948225000000001
   },
   "perQuery": [
     {

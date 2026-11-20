@@ -62,5 +62,32 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 
 Details and raw answers: `eval/e2e_results.md`, `eval/e2e_results.json`.
 
+## Code fix vs data fix — the same measurements on the corrected data (`--data fixed`)
+
+`data/snapshot_fixed/` was exported after the owner-approved data fixes
+(2026-11-20). Labels change only where the right answer changed (Wyoming,
+Georgia, Nevada; `expectedFixed` in `eval/queries.json`).
+
+| Location questions offering a machine from another place | Old code | New code |
+|---|---|---|
+| Pre-fix data | 13 / 16 | 0 / 16 |
+| Fixed data | 10 / 16 | 0 / 16 |
+
+| Gemini answers naming every right machine (16 location questions) | Old code | New code |
+|---|---|---|
+| Pre-fix data | 9 / 16 | 16 / 16 |
+| Fixed data | 10 / 16 | 16 / 16 |
+
+| Gemini answers stating a wrong-location machine is there (read by hand) | Old code | New code |
+|---|---|---|
+| Pre-fix data | 8 / 16 | 0 / 16 |
+| Fixed data | 0 / 16 | 0 / 16 |
+
+Reading: fixing the data removes the false "it's in Arizona" claims, but
+with the old code 10 of 16 location questions still flood the model with
+machines from other states (the `?` and empty-term bugs), and Gemini still
+leaves out machines in 6 of 16 answers. Both fixes were needed. Retrieval on
+fixed data, new code: precision 96.2 %, 23 / 24 exact (`eval/results_fixed.md`).
+
 No business numbers (sales, time saved, user satisfaction) are claimed:
 there are no real users or sales data for this demo.
