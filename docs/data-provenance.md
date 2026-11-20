@@ -63,7 +63,17 @@ dealer feed.
   crawler dozer for grading, site preparation and general earthmoving, with
   Grade Assist technology." (written from its own record: category, specs).
   A live dry-run afterwards finds 0 defects in the 14 machines.
-- D6–D9 are documented, not yet fixed.
+- **D6–D9 corrected on 2026-11-20** with `functions/tools/fix_catalog_text.mjs`:
+  "Compactators" → "Compactors"; the 2 Spanish articles that kept English
+  content were translated; the Spanish article with an English title was
+  retitled; "Quarry Operations Equipment" got real content; the 8 Spanish
+  knowledge categories now use the English names (e.g. "Excavadoras" →
+  "Excavators"). The empty categories (Articulated Trucks, Compactors) are
+  kept on purpose: they are valid categories with no stock yet.
+- The exact English duplicate "Understanding Machine Operating Hours"
+  (`FGC5fSA6W5uZFmtErXsa`) was deleted on 2026-11-20 with the owner's
+  confirmation (a copy remains in `data/snapshot/knowledge.json`). The
+  `knowledge` collection now has 29 articles.
 
 ## Rights and privacy
 
