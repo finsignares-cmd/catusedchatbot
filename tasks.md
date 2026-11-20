@@ -3,7 +3,7 @@
 Each commit after the spec references the task IDs it closes.
 
 - [x] **T1** Write `spec.md`, `plan.md`, `tasks.md` (this commit).
-- [ ] **T2** Add `CLAUDE.md` (context artifact for AI coding assistants).
+- [x] **T2** Add `CLAUDE.md` (context artifact for AI coding assistants).
 - [ ] **T3** Repo hygiene: fix `.gitignore`, untrack `firebase-debug.log` files and `functions/Get-ChildItem`.
 - [ ] **T4** Remove the hard-coded Gemini key; read `GEMINI_API_KEY` with `defineSecret` (NFR1).
 - [ ] **T5** Replace `allow read, write: if true` with per-collection rules + emulator tests (NFR2).
