@@ -57,8 +57,10 @@ dealer feed.
   "Nevada, USA" (`fix_location_conflicts.mjs --live --apply --decide …=id`).
   A live dry-run afterwards finds 0 conflicts. `data/snapshot/` is kept as
   the pre-fix baseline used for all measurements.
-- D3, D4, D5 are listed by the same script (`--fix-auto` to write D4/D5) and
-  are not yet corrected.
+- **D4 and D5 corrected in production on 2026-11-20** with `--fix-auto`: the
+  3 `sourceUrl` fields set to `https://www.cat.com`, and the stray quote
+  removed from the CAT 320 spec. A live dry-run afterwards finds only D3 (the
+  CAT D5 description), which needs a real description written by hand.
 - D6–D9 are documented, not yet fixed.
 
 ## Rights and privacy
