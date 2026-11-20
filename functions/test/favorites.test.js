@@ -132,3 +132,11 @@ test("n8n offline: says the service is unavailable", async () => {
   assert.match(await handleFavorites(ctx("Show my favorites"), offline),
       /not available right now/);
 });
+
+test("n8n empty list [{}] means no favorites", async () => {
+  const empty = {list: async () => ({success: true, machines: [{}]})};
+  assert.equal(await handleFavorites(ctx("Show my favorites"), empty),
+      "You don't have favorite machines yet.");
+  assert.equal(await handleFavorites(ctx("Clear favorites"), empty),
+      "You don't have any favorite machines to remove.");
+});

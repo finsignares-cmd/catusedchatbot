@@ -98,8 +98,10 @@ export function machineInMessage(message, machines) {
 }
 
 const down = (r) => r?.success === false && !Array.isArray(r?.machines);
-const has = (favs, id) =>
-  (favs?.machines ?? []).some((f) => f.machineId === id);
+// n8n answers {machines: [{}]} for an empty list: ignore empty items.
+const listOf = (favs) =>
+  (favs?.machines ?? []).filter((f) => f && f.machineId);
+const has = (favs, id) => listOf(favs).some((f) => f.machineId === id);
 
 /**
  * Handles favorite requests. Returns the answer, or null when the message
@@ -176,7 +178,7 @@ export async function handleFavorites(ctx, client = n8nClient) {
   }
 
   if (intent === "list") {
-    const list = favs?.machines ?? [];
+    const list = listOf(favs);
     if (!list.length) {
       return t("No tienes máquinas favoritas.",
           "You don't have favorite machines yet.");
@@ -187,7 +189,7 @@ export async function handleFavorites(ctx, client = n8nClient) {
   }
 
   if (intent === "clean") {
-    if (!(favs?.machines ?? []).length) {
+    if (!listOf(favs).length) {
       return t("No tienes máquinas favoritas para eliminar.",
           "You don't have any favorite machines to remove.");
     }
@@ -201,7 +203,7 @@ export async function handleFavorites(ctx, client = n8nClient) {
   // intent === "delete"
   const machine = machineInMessage(message, machines);
   if (!machine) {
-    if (!(favs?.machines ?? []).length) {
+    if (!listOf(favs).length) {
       return t("No tienes máquinas favoritas para eliminar.",
           "You don't have any favorite machines to remove.");
     }
