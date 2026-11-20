@@ -14,9 +14,9 @@ Start here:
 | Measured impact (slide 6) | `docs/impact-scorecard.md`, `eval/results.md`, `eval/rules_results.md` |
 
 ```bash
-cd functions && npm ci && npm test       # 13 unit tests
+cd functions && npm ci && npm test       # 14 unit tests
 node eval/run_eval.mjs                   # old vs new retrieval
-npm --prefix rules-tests ci && npm --prefix rules-tests run emulate   # 8 rules tests
+npm --prefix rules-tests ci && npm --prefix rules-tests run emulate   # 9 rules tests
 ```
 
 The Gemini key is a Firebase secret: `firebase functions:secrets:set GEMINI_API_KEY`.

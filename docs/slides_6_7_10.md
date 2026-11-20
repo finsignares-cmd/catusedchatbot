@@ -16,7 +16,7 @@ Copy into the deck. All numbers come from `docs/impact-scorecard.md`.
 | Context sent to the AI per question | 13,975 chars | 1,157 chars (−92 %) |
 | Gemini answers saying a machine is in a state where it is not | 8 / 16 | 0 / 16 |
 | Median answer time (Gemini call) | 1.23 s | 1.06 s |
-| Security rule tests passed | 1 / 8 | 8 / 8 |
+| Security rule tests passed | 1 / 9 | 9 / 9 |
 | API keys in code | 1 | 0 |
 
 Footer: *Source: `eval/results.md`, `eval/rules_results.md` (repo branch
@@ -60,6 +60,6 @@ code had no check for it.
   confirmed Arizona dozer". Without it, it offered the -WY machine (see
   `docs/context-artifact-experiment.md`).
 - **Security.** The key moved to Secret Manager (the leaked one is being rotated), and the
-  open rule `if true` was replaced by per-collection rules (8/8 tests).
+  open rule `if true` was replaced by per-collection rules (9/9 tests, live since 2026-11-20).
 - **Still open:** one false positive (Q23), and fixing the 3 records in
   production.
