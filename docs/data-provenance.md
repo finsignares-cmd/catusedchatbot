@@ -71,8 +71,9 @@ dealer feed.
   "Excavators"). The empty categories (Articulated Trucks, Compactors) are
   kept on purpose: they are valid categories with no stock yet.
 - The exact English duplicate "Understanding Machine Operating Hours"
-  (`FGC5fSA6W5uZFmtErXsa`) is pending deletion (owner's confirmation; a copy
-  is in `data/snapshot/knowledge.json`).
+  (`FGC5fSA6W5uZFmtErXsa`) was deleted on 2026-11-20 with the owner's
+  confirmation (a copy remains in `data/snapshot/knowledge.json`). The
+  `knowledge` collection now has 29 articles.
 
 ## Rights and privacy
 
