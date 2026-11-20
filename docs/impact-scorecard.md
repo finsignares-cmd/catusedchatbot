@@ -41,7 +41,7 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 | Machines with a non-URL `sourceUrl` | 3 / 14 |
 | Other record defects listed (stray quote, location used as description) | 2 |
 | Detected and flagged by the bot automatically | 3 / 3 contradictions |
-| Corrected in production | 0, pending the owner's decision (`tasks.md` O3) |
+| Corrected in production | 3 / 3 (2026-11-20; live dry-run now finds 0 conflicts) |
 
 ## Engineering process
 

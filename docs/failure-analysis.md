@@ -71,8 +71,10 @@ measured in `eval/results.md`.
   returns the two motor graders, because their descriptions contain the word
   "maintenance". It is harmless (the right article is also returned), but it
   is a false positive. It is left visible in the results, not tuned away.
-- **The data defects D1–D9** (`docs/data-provenance.md`) remain in
-  production until the owner applies the fixes.
+- **Data:** the 3 ID/location conflicts (D1) were corrected in production on
+  2026-11-20. Live check afterwards: "Do you have machines in Arizona?" →
+  CAT349-2022-AZ, CAT950-2022-AZ, CAT340-2022-AZ only; "Any dozers in Wyoming?"
+  → CATD8-2022-WY. Defects D3–D9 are documented but still open.
 - **End-to-end (measured 2026-11-20, `eval/e2e_results.md`):** with the old
   code, Gemini told the buyer a machine was in the requested place when it was
   not in 8 of 16 location questions (e.g. "Located in Arizona

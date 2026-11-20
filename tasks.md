@@ -22,5 +22,5 @@ Owner-only steps (need Francisco's approval, not done by the assistant):
 
 - [x] **O1** Rotate the leaked Gemini key and store the new one: `firebase functions:secrets:set GEMINI_API_KEY`. (2026-11-20: the key leaked in `7cfea65` was already invalid; a key never exposed is now secret version 2.)
 - [x] **O2** Deploy rules and function: `firebase deploy --only firestore:rules,functions`. (Rules and function deployed 2026-11-20, Node.js 22; live answers checked for Arizona and Miami.)
-- [ ] **O3** Decide the true location of the 3 inconsistent machines and run `tools/fix_location_conflicts.mjs --apply`.
+- [x] **O3** Decide the true location of the 3 inconsistent machines and run `tools/fix_location_conflicts.mjs --apply`. (2026-11-20: the ID is right; 3 locations updated, 0 conflicts left.)
 - [ ] **O4** Update slides 6, 7 and 10; push the branch; resubmit the form.
