@@ -1,4 +1,8 @@
 {
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
   "functions": [
     {
       "codebase": "default",
@@ -15,5 +19,14 @@
       ],
       "source": "functions"
     }
-  ]
+  ],
+  "emulators": {
+    "firestore": {
+      "host": "127.0.0.1",
+      "port": 8191
+    },
+    "ui": {
+      "enabled": false
+    }
+  }
 }
