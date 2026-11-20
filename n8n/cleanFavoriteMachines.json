@@ -1,0 +1,293 @@
+{
+  "name": "cleanFavoriteMachines",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cleanFavoriteMachines",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1024,
+        96
+      ],
+      "id": "c9fc6334-b2c8-4328-a491-7d8dc017a287",
+      "name": "Webhook",
+      "webhookId": "d8374ec1-c534-4917-bd6a-04c2a3096957"
+    },
+    {
+      "parameters": {
+        "jsCode": "const userId = $('Webhook').first().json.body.userId;\nconst mine = items.filter(i => userId && i.json.userId === userId);\nif (!mine.length) { return [{ json: { found: false } }]; }\nreturn mine.map(i => ({ json: { found: true, documentId: i.json._id, machineId: i.json.machineId, machineModel: i.json.machineModel } }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -608,
+        96
+      ],
+      "id": "6d8749f5-d3ae-4590-867b-e4ec56a3b18a",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "getAll",
+        "projectId": "e-waste-a-i-clients-qhamrz",
+        "collection": "favorites"
+      },
+      "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+      "typeVersion": 1.1,
+      "position": [
+        -816,
+        96
+      ],
+      "id": "6ec3e3f4-e45a-4a33-a56c-7983ac5fb1da",
+      "name": "Get many documents",
+      "credentials": {
+        "googleApi": {
+          "id": "AuzHiQxJhcznaF5L",
+          "name": "Google Firebase Cloud Firestore account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        64,
+        144
+      ],
+      "id": "5b243947-af12-46ab-aa2b-e756e005f9b8",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "badc8e4c-0d31-490a-8893-693ea2645b57",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -400,
+        96
+      ],
+      "id": "73bdde78-5407-4704-9835-226444d23c81",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "delete",
+        "projectId": "e-waste-a-i-clients-qhamrz",
+        "collection": "favorites",
+        "documentId": "={{ $json.documentId }}"
+      },
+      "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+      "typeVersion": 1.1,
+      "position": [
+        64,
+        -32
+      ],
+      "id": "f04946ca-1e55-47ed-b69f-57b7578e3c0c",
+      "name": "Delete a document",
+      "credentials": {
+        "googleApi": {
+          "id": "AuzHiQxJhcznaF5L",
+          "name": "Google Firebase Cloud Firestore account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9dc1dacb-7376-42c6-a28a-fcad093e1189",
+              "name": "success",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "fbf6fa62-538e-4b29-92d5-3a77de4b4351",
+              "name": "message",
+              "value": "Machine removed from favorites successfully.",
+              "type": "string"
+            },
+            {
+              "id": "95308e1b-1aaa-4de0-a5d2-14f48032f4e9",
+              "name": "machineId",
+              "value": "={{ $json.machineId }}",
+              "type": "string"
+            },
+            {
+              "id": "e8723ce7-836d-47bd-a72b-37e6e5216ab0",
+              "name": "machineModel",
+              "value": "={{ $json.machineModel }}",
+              "type": "string"
+            },
+            {
+              "id": "e4e4417f-d164-4f33-9081-27687f0af14b",
+              "name": "documentId",
+              "value": "={{ $json.documentId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        -32
+      ],
+      "id": "df071d51-5a39-45c0-a1e7-84a45e3368b0",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "97c71440-c909-46b1-a729-5f98ef83cebb",
+              "name": "success",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "edd61a13-56a8-4de8-94f7-915009e086e6",
+              "name": "message",
+              "value": "Machine not found in favorites",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        224
+      ],
+      "id": "967ae39e-4b93-4032-8459-1a24d1e80d81",
+      "name": "Edit Fields1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get many documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many documents": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Delete a document",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "tags": []
+}

@@ -1,0 +1,209 @@
+{
+  "name": "saveFavoriteMachine",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "saveFavoriteMachine",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "366956e2-5f6a-449f-8809-b3a266d61823",
+      "name": "Webhook",
+      "webhookId": "38dfd6ea-5c72-4b6b-840d-82b5eea4c86b"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "create",
+        "projectId": "e-waste-a-i-clients-qhamrz",
+        "collection": "favorites",
+        "columns": "userId,machineId,machineModel,year,location,createdAt"
+      },
+      "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+      "typeVersion": 1.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "f955a8b4-cd08-4ec0-a63a-d11182c129a5",
+      "name": "Create a document",
+      "credentials": {
+        "googleApi": {
+          "id": "AuzHiQxJhcznaF5L",
+          "name": "Google Firebase Cloud Firestore account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        832,
+        0
+      ],
+      "id": "8c055e3c-dcb6-4110-9372-5f57b0f98ad6",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f49c2b00-d8df-4352-a41e-b4d27842c8fb",
+              "name": "userId",
+              "value": "={{ $json.body.userId }}",
+              "type": "string"
+            },
+            {
+              "id": "be699668-d1ad-410d-bc64-f892908aaae8",
+              "name": "machineId",
+              "value": "={{ $json.body.machineId }}",
+              "type": "string"
+            },
+            {
+              "id": "c08dc458-05f2-4168-ad61-0e9bf327513a",
+              "name": "machineModel",
+              "value": "={{ $json.body.machineModel }}",
+              "type": "string"
+            },
+            {
+              "id": "60b3d53d-5557-4b63-b454-d7d962c708f7",
+              "name": "year",
+              "value": "={{ $json.body.year }}",
+              "type": "number"
+            },
+            {
+              "id": "5ec2c8f5-0f41-4a4f-8936-d292e31c276a",
+              "name": "location",
+              "value": "={{ $json.body.location }}",
+              "type": "string"
+            },
+            {
+              "id": "f5d3b1f9-2622-4410-a67a-91ab2a728cd9",
+              "name": "createdAt",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "058e35d5-f784-4c07-b120-d09022854760",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d64a7f3a-8efa-4122-ab64-c20c9bf3081a",
+              "name": "success",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "95815b44-00f8-4f38-8a01-ac4b9ce58035",
+              "name": "message",
+              "value": "=Machine {{ $json.machineModel }} has been added to your favorites.",
+              "type": "string"
+            },
+            {
+              "id": "ff2fe741-6350-4242-982d-340a363d73f0",
+              "name": "machineId",
+              "value": "={{ $json.machineId }}",
+              "type": "string"
+            },
+            {
+              "id": "b649c303-8101-4ab1-94af-2421d7b79faf",
+              "name": "machineModel",
+              "value": "={{ $json.machineModel }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        0
+      ],
+      "id": "5288b3b2-f640-46ac-a2c9-c7e168c2ccc7",
+      "name": "Edit Fields1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a document": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Create a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "tags": []
+}
