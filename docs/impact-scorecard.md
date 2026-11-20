@@ -17,6 +17,13 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 | Knowledge docs in context per question (avg.) | 30.0 | 1.2 |
 | Context size per question (avg. characters) | 13,975 | 1,157 (−92 %) |
 | Retrieval CPU time per question (avg.) | 0.07 ms | 0.22 ms (negligible next to the LLM call) |
+| Answer language matches the question (`node eval/run_lang.mjs`) | 23 / 24 | 24 / 24 |
+
+> **Caveat.** The labels and the ground-truth rule (FR3: ID suffix and
+> location must agree) were written by the same author who wrote the fix,
+> and the new code implements that rule. These numbers therefore measure
+> conformance to the specification on this data, not independent accuracy.
+> The old logic is measured against the same rule.
 
 ## Security — `npm --prefix rules-tests run emulate` and `git grep`
 

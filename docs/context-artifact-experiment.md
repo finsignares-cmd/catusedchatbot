@@ -57,6 +57,26 @@
 > +            .split(",")[0]
 > ```
 
+## Second pair: a case CLAUDE.md does not name
+
+CLAUDE.md uses `CATD8-2022-WY` as its example, so run B partly *read* the
+answer for the Arizona question. To check whether the rule generalizes, both
+variants were asked a question about a record CLAUDE.md never mentions:
+"¿Tienen cargadores de ruedas en Miami?" (the only candidate is
+`CAT966-2023-NV`, located "Miami, USA").
+
+| | Without CLAUDE.md (A2) | With CLAUDE.md (B2) |
+|---|---|---|
+| Suggested answer | "Sí, tenemos un cargador de ruedas en Miami: el CAT 966 (2023, 321 hp, 23 toneladas)." | "Tenemos un cargador de ruedas CAT 966 (2023, 2200 horas, 321 hp) registrado en Miami, aunque su ubicación aún debe confirmarse." |
+
+Without the file, the assistant noticed the conflict in a side note, but its
+customer-facing answer still stated the location as fact. With the file, the
+answer carried the caveat. Both runs also found that the old code would
+answer this Spanish question in English. That bug was then fixed (T15,
+`eval/lang_results.md`).
+
+Full reports, verbatim: `docs/context-experiment-runs.md`.
+
 ## What we learned
 
 1. The context file changed the **business decision**, not just the code
@@ -67,5 +87,6 @@
    search terms end with an empty string, and `"…".includes("")` is always
    true, so the old fallback returned **every** document for every message.
    That finding was added to `docs/failure-analysis.md` (F3).
-3. Limits: one task, one model, one run per variant. This is an
-   illustration, not a benchmark.
+3. Limits: two questions, one model, one run per variant (two for B). The
+   first Arizona question is partly answered inside CLAUDE.md itself. This
+   is an illustration, not a benchmark.

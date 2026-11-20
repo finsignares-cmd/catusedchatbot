@@ -6,6 +6,10 @@ Queries: `eval/queries.json` (24 labelled, EN + ES).
 "Old" = retrieval of commit 7cfea65 (verbatim copy in `eval/legacy_retrieval.js`),
 new conversation (no history). "New" = `functions/retrieval.js`.
 
+> **Caveat.** Labels and the ground-truth rule (FR3) were written by the
+> author of the fix, and the new code implements that rule: this measures
+> conformance to the spec on this data, not independent accuracy.
+
 | Metric | Old | New |
 |---|---|---|
 | Precision (machine IDs offered to the model) | 17.5 % | 96.0 % |
@@ -16,7 +20,7 @@ new conversation (no history). "New" = `functions/retrieval.js`.
 | Avg. machines in context per query | 11.2 | 2.1 |
 | Avg. knowledge docs in context | 30.0 | 1.2 |
 | Avg. context size (characters) | 13975 | 1157 |
-| Avg. retrieval time (ms, 200 runs) | 0.064 | 0.184 |
+| Avg. retrieval time (ms, 200 runs) | 0.070 | 0.209 |
 
 Records with contradictory ID/location are not counted as offered by the
 new logic: they go to the separate UNCONFIRMED LOCATION block of the prompt.
