@@ -16,7 +16,7 @@ new conversation (no history). "New" = `functions/retrieval.js`.
 | Avg. machines in context per query | 11.2 | 2.1 |
 | Avg. knowledge docs in context | 30.0 | 1.2 |
 | Avg. context size (characters) | 13975 | 1157 |
-| Avg. retrieval time (ms, 200 runs) | 0.074 | 0.224 |
+| Avg. retrieval time (ms, 200 runs) | 0.064 | 0.184 |
 
 Records with contradictory ID/location are not counted as offered by the
 new logic: they go to the separate UNCONFIRMED LOCATION block of the prompt.

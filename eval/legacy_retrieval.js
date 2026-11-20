@@ -10,7 +10,9 @@
  * @param {Array<Object>} machines Machine docs ({_id, ...fields}).
  * @param {Array<Object>} knowledge Knowledge docs.
  * @return {{requestedLocation: (string|null), machineIds: string[],
- *   knowledgeCount: number, contextChars: number}} Selection.
+ *   knowledgeCount: number, contextChars: number,
+ *   machineContext: Array<Object>, knowledgeContext: Array<Object>}}
+ *   Selection.
  */
 export function legacyRetrieve(message, conversationHistory,
     machines, knowledge) {
@@ -81,6 +83,8 @@ export function legacyRetrieve(message, conversationHistory,
     requestedLocation,
     machineIds: machineContext.map((m) => m.machineId),
     knowledgeCount: knowledgeContext.length,
+    machineContext,
+    knowledgeContext,
     contextChars: JSON.stringify(knowledgeContext).length +
       JSON.stringify(machineContext).length,
   };
