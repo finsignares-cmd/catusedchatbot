@@ -61,5 +61,7 @@ code had no check for it.
   `docs/context-artifact-experiment.md`).
 - **Security.** The key moved to Secret Manager (the leaked one is being rotated), and the
   open rule `if true` was replaced by per-collection rules (9/9 tests, live since 2026-11-20).
-- **Still open:** one false positive (Q23), and fixing the 3 records in
-  production.
+- **Data fixed at the source:** the 3 contradictory records were corrected
+  in production (the ID's state was the true one), so a live run of "machines
+  in Arizona" now returns only the 3 Arizona machines.
+- **Still open:** one false positive (Q23) and minor data defects (D3–D9).

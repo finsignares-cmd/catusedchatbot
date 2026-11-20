@@ -51,8 +51,14 @@ dealer feed.
   machines are never presented as being in a place; the prompt lists them
   under UNCONFIRMED LOCATION.
 - D2 is handled by mapping cities to states (Miami → Florida).
-- D1, D3, D4, D5 are listed by `functions/tools/fix_location_conflicts.mjs`
-  (dry-run). Correcting production data is the owner's decision.
+- **D1 corrected in production on 2026-11-20** (owner's decision: the ID is
+  right). The `location` field was set to the ID's state: `CATD8-2022-WY` →
+  "Wyoming, USA", `CAT420-2022-GA` → "Georgia, USA", `CAT966-2023-NV` →
+  "Nevada, USA" (`fix_location_conflicts.mjs --live --apply --decide …=id`).
+  A live dry-run afterwards finds 0 conflicts. `data/snapshot/` is kept as
+  the pre-fix baseline used for all measurements.
+- D3, D4, D5 are listed by the same script (`--fix-auto` to write D4/D5) and
+  are not yet corrected.
 - D6–D9 are documented, not yet fixed.
 
 ## Rights and privacy

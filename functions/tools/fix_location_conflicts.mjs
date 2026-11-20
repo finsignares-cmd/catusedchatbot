@@ -1,8 +1,8 @@
 // Proposes (and, only with --apply, writes) fixes for the data defects found
 // in the `machines` collection (tasks.md T10, owner step O3).
 //
-//   node tools/fix_location_conflicts.mjs                 # dry-run on data/snapshot
-//   node tools/fix_location_conflicts.mjs --live          # dry-run on Firestore (read-only)
+//   node tools/fix_location_conflicts.mjs          # dry-run, snapshot
+//   node tools/fix_location_conflicts.mjs --live   # dry-run, Firestore
 //   node tools/fix_location_conflicts.mjs --live --apply \
 //        --decide CATD8-2022-WY=id --decide CAT420-2022-GA=id ...
 //
@@ -10,6 +10,7 @@
 //   id    -> the ID suffix is right: set `location` to "<State>, USA"
 //   keep  -> leave the record as it is (it stays flagged by the chatbot)
 // The machineId is never renamed: favorites in n8n store it.
+// "auto" fixes (sourceUrl, stray quote) are written only with --fix-auto.
 import {readFileSync} from "node:fs";
 import {US_STATES, locationConflict} from "../retrieval.js";
 
@@ -74,12 +75,12 @@ function parseArgs(argv) {
     }
   }
   return {live: argv.includes("--live"), apply: argv.includes("--apply"),
-    decisions};
+    fixAuto: argv.includes("--fix-auto"), decisions};
 }
 
 /** Entry point. */
 async function main() {
-  const {live, apply, decisions} = parseArgs(process.argv.slice(2));
+  const {live, apply, fixAuto, decisions} = parseArgs(process.argv.slice(2));
   if (apply && !live) throw new Error("--apply needs --live");
   let machines;
   let db;
@@ -104,7 +105,7 @@ async function main() {
   }
   if (!apply) return;
   const writable = changes.filter((c) =>
-    (c.decision === "id" || c.decision === "auto") &&
+    (c.decision === "id" || (fixAuto && c.decision === "auto")) &&
     JSON.stringify(c.from) !== JSON.stringify(c.to));
   for (const c of writable) {
     await db.collection("machines").doc(c.docId).update({[c.field]: c.to});
