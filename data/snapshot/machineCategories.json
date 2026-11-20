@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "0megEcUcCnKG8K4CfHz7",
+    "_createTime": "2026-07-25T10:45:14.730453Z",
+    "description": "Hydraulic excavators used for digging, trenching, site preparation, mining and construction projects.",
+    "name": "Excavators"
+  },
+  {
+    "_id": "BmmVqcszAIY5TJIJfLYb",
+    "_createTime": "2026-07-25T11:18:12.836681Z",
+    "description": "Track-type tractors used for earthmoving, grading and heavy pushing applications.",
+    "name": "Dozers"
+  },
+  {
+    "_id": "P6ADxrmQXzsiGcJayupt",
+    "_createTime": "2026-07-25T11:42:57.018191Z",
+    "description": "Versatile machines combining excavation and loading capabilities.",
+    "name": "Backhoe Loaders"
+  },
+  {
+    "_id": "g2gK9mjsS30vBbC9zIEx",
+    "_createTime": "2026-07-25T11:42:34.677439Z",
+    "description": "Machines for soil and asphalt compaction.",
+    "name": "Compactators"
+  },
+  {
+    "_id": "hrKLjltXHMDvQEuaq8F2",
+    "_createTime": "2026-07-25T11:42:13.122676Z",
+    "description": "Off-road haul trucks for construction and mining sites.",
+    "name": "Articulated Trucks"
+  },
+  {
+    "_id": "x5zIlVBE0iiWaY8UweN3",
+    "_createTime": "2026-07-25T10:45:38.849068Z",
+    "description": "Machines designed for loading trucks, aggregates, quarry applications and material handling.",
+    "name": "Wheel Loaders"
+  },
+  {
+    "_id": "yNOZEMW5MCvckQphfDMX",
+    "_createTime": "2026-07-25T11:18:38.752419Z",
+    "description": "Machines used for road construction, site grading and surface finishing.",
+    "name": "Motor Graders"
+  }
+]

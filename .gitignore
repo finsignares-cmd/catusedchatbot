@@ -5,3 +5,4 @@ firebase-debug.*.log
 .secret.local
 .env
 .env.*
+*-debug.log
