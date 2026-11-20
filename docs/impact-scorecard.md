@@ -51,13 +51,16 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 | Automated tests | 0 | 13 unit tests + 8 rules tests, all passing |
 | Commits linked to a task ID | 0 / 1 | every commit on the branch |
 
-## Pending (needs the rotated Gemini key, owner step O1)
+## End-to-end answers from Gemini — `node eval/run_e2e.mjs` (16 location questions, `gemini-3.5-flash-lite`, 2026-11-20)
 
-| Metric | How it will be measured |
-|---|---|
-| Final answers that name a wrong-location machine without a warning | `node eval/run_e2e.mjs` (16 location questions, old vs new prompt) |
-| Median end-to-end latency of the model call | same run |
-| Prompt size sent to Gemini (characters) | same run |
+| Metric | Before | After |
+|---|---|---|
+| Answers stating a wrong-location machine is in the requested place (read by hand) | 8 / 16 | 0 / 16 |
+| Answers mentioning a contradictory record with "location must be confirmed" | 0 / 16 | 10 / 16 |
+| Median latency of the model call | 1,230 ms | 1,058 ms |
+| Prompt size sent to Gemini (avg. characters) | 14,594 | 3,109 (−79 %) |
+
+Details and raw answers: `eval/e2e_results.md`, `eval/e2e_results.json`.
 
 No business numbers (sales, time saved, user satisfaction) are claimed:
 there are no real users or sales data for this demo.
