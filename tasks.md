@@ -12,7 +12,7 @@ Each commit after the spec references the task IDs it closes.
 - [x] **T8** Wire `retrieval.js` into `chat`; prompt rules for FR3, FR4, FR7.
 - [x] **T9** Labelled query set + `eval/run_eval.mjs`; commit measured `eval/results.md` (NFR3).
 - [x] **T10** `tools/fix_location_conflicts.mjs` (dry-run by default) for the 3 inconsistent records.
-- [ ] **T11** `docs/data-provenance.md` (NFR4).
+- [x] **T11** `docs/data-provenance.md` (NFR4).
 - [ ] **T12** `docs/failure-analysis.md` with concrete failures from this data (replaces the generic analysis of slides 7 and 10).
 - [ ] **T13** `docs/impact-scorecard.md` with measured numbers (slide 6) and `docs/slides_6_7_10.md` with the replacement slide text.
 - [ ] **T14** CLAUDE.md before/after example captured from a real run.
