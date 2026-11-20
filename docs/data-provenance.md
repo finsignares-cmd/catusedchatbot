@@ -1,16 +1,18 @@
 # Data provenance — Firestore records used by the chatbot
 
 Snapshot analysed: `data/snapshot/` (read-only export, 2026-11-20). Figures
-below are computed from that snapshot; statements marked **(author to
-confirm)** are the author's account of how the data was produced.
+below are computed from that snapshot. The origin of the records was
+confirmed by the author on 2026-11-20: **all catalogue data is demo data,
+typed by hand** for this project. It does not come from real listings or a
+dealer feed.
 
 ## Summary
 
 | Collection | Docs | Created (Firestore `createTime`, UTC) | Origin |
 |---|---|---|---|
-| `machines` | 14 | 2026-07-25 11:21 → 12:07 (46 min) | **Synthetic demo inventory**, typed by hand in the Firebase console (author to confirm). Not real listings. |
-| `machineCategories` | 7 | 2026-07-25 10:45 → 11:42 | Hand-written category names and descriptions (author to confirm). |
-| `knowledge` | 30 | 20 docs on 2026-07-25 11:36 → 12:25; 10 docs on 2026-08-04 19:06 → 20:27 | Short articles written for the demo; the 2026-08-04 batch is mostly Spanish translations of earlier articles (author to confirm). |
+| `machines` | 14 | 2026-07-25 11:21 → 12:07 (46 min) | **Synthetic demo inventory**, typed by hand in the Firebase console. Not real listings. |
+| `machineCategories` | 7 | 2026-07-25 10:45 → 11:42 | Hand-written category names and descriptions. |
+| `knowledge` | 30 | 20 docs on 2026-07-25 11:36 → 12:25; 10 docs on 2026-08-04 19:06 → 20:27 | Short articles written for the demo; the 2026-08-04 batch is mostly Spanish translations of earlier articles. |
 | `chatSessions`, `chatMessages`, `users` | — | written at runtime by the app and the function | User data. **Not** exported, not used for evaluation. |
 
 ## Evidence
@@ -27,8 +29,7 @@ confirm)** are the author's account of how the data was produced.
   in the range of Caterpillar's published figures for each model, but were
   not checked against a specific spec sheet. Units are mixed: 8 machines
   give weight in tons, 6 in kg. The CAT 140 gives a range ("179-231 hp").
-- **Year, hours and location are invented** for the demo (author to
-  confirm): years 2021–2023, hours 1,700–5,400.
+- **Year, hours and location are invented** for the demo: years 2021–2023, hours 1,700–5,400.
 
 ## Known defects (they explain the failures in `docs/failure-analysis.md`)
 
@@ -57,5 +58,5 @@ confirm)** are the author's account of how the data was produced.
 ## Rights and privacy
 
 The catalogue contains no personal data. Caterpillar model names are used
-descriptively; no content was copied from Caterpillar documents beyond model
-names and approximate specification figures (author to confirm).
+descriptively. Specification figures are approximate demo values, not copied
+from a specific Caterpillar document.
