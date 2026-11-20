@@ -1,0 +1,29 @@
+{
+  "groundTruthRule": "Expected = machine IDs that correctly answer the query on data/snapshot. For location queries a machine counts only if its location field AND its ID suffix both name the requested state (spec FR3); a city counts as its state (FR2). Labelled by hand on 2026-11-20 before running the new code on this file.",
+  "queries": [
+    {"id": "Q01", "lang": "en", "type": "location", "state": "AZ", "text": "Do you have machines in Arizona?", "expected": ["CAT349-2022-AZ", "CAT950-2022-AZ", "CAT340-2022-AZ"]},
+    {"id": "Q02", "lang": "en", "type": "location", "state": "AZ", "text": "machines in arizona", "expected": ["CAT349-2022-AZ", "CAT950-2022-AZ", "CAT340-2022-AZ"]},
+    {"id": "Q03", "lang": "en", "type": "location", "state": "FL", "text": "What equipment do you have in Miami?", "expected": ["CAT336-2023-FL"]},
+    {"id": "Q04", "lang": "es", "type": "location", "state": "FL", "text": "Equipos disponibles en Miami", "expected": ["CAT336-2023-FL"]},
+    {"id": "Q05", "lang": "es", "type": "location", "state": "AZ", "text": "¿Qué excavadoras hay en Arizona?", "expected": ["CAT349-2022-AZ", "CAT340-2022-AZ"]},
+    {"id": "Q06", "lang": "en", "type": "location", "state": "AZ", "text": "Show me wheel loaders in Arizona", "expected": ["CAT950-2022-AZ"]},
+    {"id": "Q07", "lang": "en", "type": "location", "state": "WY", "text": "Any dozers in Wyoming?", "expected": []},
+    {"id": "Q08", "lang": "en", "type": "location", "state": "GA", "text": "Do you have anything in Georgia?", "expected": []},
+    {"id": "Q09", "lang": "en", "type": "location", "state": "TX", "text": "machines in Texas", "expected": ["CAT320-2022-TX", "CAT150-2021-TX"]},
+    {"id": "Q10", "lang": "es", "type": "location", "state": "CO", "text": "¿Tienen equipos en Colorado?", "expected": ["CATD5-2023-CO", "CAT140-2022-CO"]},
+    {"id": "Q11", "lang": "en", "type": "location", "state": "NC", "text": "Excavators in North Carolina", "expected": ["CAT330-2023-NC"]},
+    {"id": "Q12", "lang": "en", "type": "location", "state": "NV", "text": "What do you have in Nevada?", "expected": ["CATD6-2021-NV"]},
+    {"id": "Q13", "lang": "en", "type": "location", "state": "FL", "text": "Do you have a backhoe in Florida?", "expected": []},
+    {"id": "Q14", "lang": "en", "type": "location", "state": "UT", "text": "Utah wheel loaders", "expected": ["CAT980-2021-UT"]},
+    {"id": "Q15", "lang": "en", "type": "location", "state": "AZ", "text": "machines in AZ", "expected": ["CAT349-2022-AZ", "CAT950-2022-AZ", "CAT340-2022-AZ"]},
+    {"id": "Q16", "lang": "es", "type": "location", "state": "AZ", "text": "¿Qué hay disponible en Phoenix?", "expected": ["CAT349-2022-AZ", "CAT950-2022-AZ", "CAT340-2022-AZ"]},
+    {"id": "Q17", "lang": "en", "type": "model", "text": "Specs of the CAT 349", "expected": ["CAT349-2022-AZ"]},
+    {"id": "Q18", "lang": "es", "type": "model", "text": "¿Cuántas horas tiene la CAT D8?", "expected": ["CATD8-2022-WY"]},
+    {"id": "Q19", "lang": "es", "type": "model", "text": "ficha técnica de la cat 966", "expected": ["CAT966-2023-NV"]},
+    {"id": "Q20", "lang": "en", "type": "category", "text": "Show me your excavators", "expected": ["CAT336-2023-FL", "CAT349-2022-AZ", "CAT330-2023-NC", "CAT320-2022-TX", "CAT340-2022-AZ"]},
+    {"id": "Q21", "lang": "es", "type": "category", "text": "motoniveladoras disponibles", "expected": ["CAT140-2022-CO", "CAT150-2021-TX"]},
+    {"id": "Q22", "lang": "en", "type": "inventory", "text": "What machines do you have?", "expected": ["CAT336-2023-FL", "CAT349-2022-AZ", "CATD5-2023-CO", "CAT140-2022-CO", "CAT330-2023-NC", "CAT320-2022-TX", "CATD8-2022-WY", "CAT950-2022-AZ", "CAT340-2022-AZ", "CAT420-2022-GA", "CAT966-2023-NV", "CAT980-2021-UT", "CAT150-2021-TX", "CATD6-2021-NV"]},
+    {"id": "Q23", "lang": "en", "type": "knowledge", "text": "Why do maintenance records matter?", "expected": []},
+    {"id": "Q24", "lang": "en", "type": "greeting", "text": "hello", "expected": []}
+  ]
+}

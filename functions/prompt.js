@@ -36,7 +36,10 @@ export function buildPrompt({message, language, userIntent,
   const place = selection.location ?
     `${selection.location.name} (US state ${selection.location.state})` :
     "none";
-  const matches = selection.matches.map(machineForPrompt);
+  const flagged = new Set(selection.conflicts.map((m) => m.machineId));
+  const matches = selection.matches
+      .filter((m) => !flagged.has(m.machineId))
+      .map(machineForPrompt);
   const unconfirmed = selection.conflicts.map((m) => ({
     ...machineForPrompt(m),
     dataWarning: `The ID suffix says ${m.conflict.idState} but the ` +
