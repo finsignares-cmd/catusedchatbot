@@ -39,7 +39,7 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 |---|---|
 | Machines whose ID contradicts their location | 3 / 14 (21 %) |
 | Machines with a non-URL `sourceUrl` | 3 / 14 (corrected 2026-11-20) |
-| Other record defects listed (stray quote, location used as description) | 2 (quote corrected; D5 description still open) |
+| Other record defects listed (stray quote, location used as description) | 2 (both corrected 2026-11-20; live check: 0 defects left) |
 | Detected and flagged by the bot automatically | 3 / 3 contradictions |
 | Corrected in production | 3 / 3 (2026-11-20; live dry-run now finds 0 conflicts) |
 
