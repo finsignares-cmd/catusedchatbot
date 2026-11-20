@@ -47,16 +47,26 @@ service cloud.firestore {
 
     // Chat history: each user sees and writes only their own documents,
     // and cannot hand a document over to another user.
-    // Note: list queries from the app must filter by userId == current user.
     match /chatSessions/{sessionId} {
       allow read, delete: if ownsExisting();
       allow create: if ownsNew();
       allow update: if ownsExisting() && ownsNew();
     }
+    // Messages belong to a session. The FlutterFlow app reads them with
+    // `where sessionId == X` (no userId filter) and stores the bot reply
+    // itself with userId "AI", so ownership is checked through the session.
+    function ownsSession(sessionId) {
+      return signedIn() &&
+        get(/databases/$(database)/documents/chatSessions/$(sessionId))
+          .data.userId == request.auth.uid;
+    }
     match /chatMessages/{messageId} {
-      allow read, delete: if ownsExisting();
-      allow create: if ownsNew();
-      allow update: if ownsExisting() && ownsNew();
+      allow read: if ownsSession(resource.data.sessionId);
+      allow create: if ownsSession(request.resource.data.sessionId) &&
+        (request.resource.data.userId == request.auth.uid ||
+         (request.resource.data.userId == "AI" &&
+          request.resource.data.role == "ChatBot"));
+      allow update, delete: if false;
     }
   }
 }

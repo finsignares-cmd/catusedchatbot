@@ -29,7 +29,7 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 
 | Metric | Before | After |
 |---|---|---|
-| Firestore rule tests passed (8 tests: anonymous access, cross-user chat access, catalogue writes, unknown collections) | 1 / 8 | 8 / 8 |
+| Firestore rule tests passed (9 tests: anonymous access, cross-user chat access, catalogue writes, unknown collections, the app's real queries) | 1 / 9 | 9 / 9 (deployed 2026-11-20) |
 | API keys in source code | 1 (Gemini key, `functions/index.js:144`) | 0 (Secret Manager `GEMINI_API_KEY`) |
 | Debug logs and `node_modules` tracked in git | 2 logs + 6,314 dependency files | 0 |
 
@@ -48,7 +48,7 @@ could not be measured yet say **pending** and why. Before = commit `7cfea65`
 | Metric | Before | After |
 |---|---|---|
 | Spec / plan / tasks in git before the code changes | No | Yes (first commit of the branch, `T1`) |
-| Automated tests | 0 | 13 unit tests + 8 rules tests, all passing |
+| Automated tests | 0 | 14 unit tests + 9 rules tests, all passing |
 | Commits linked to a task ID | 0 / 1 | every commit on the branch |
 
 ## End-to-end answers from Gemini — `node eval/run_e2e.mjs` (16 location questions, `gemini-3.5-flash-lite`, 2026-11-20)

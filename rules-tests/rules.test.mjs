@@ -77,18 +77,29 @@ test("users create chat documents only for themselves", async () => {
       {userId: "alice", sessionId: "s1", content: "x"}));
   await assertFails(setDoc(doc(alice(), "chatMessages/c3"),
       {userId: "bob", sessionId: "s1", content: "x"}));
+  await assertFails(setDoc(doc(bob(), "chatMessages/c4"),
+      {userId: "bob", sessionId: "s1", content: "x"}));
   await assertFails(updateDoc(doc(alice(), "chatSessions/s1"),
       {userId: "bob"}));
 });
 
-test("history queries must be filtered by the caller's userId", async () => {
-  const mine = query(collection(alice(), "chatMessages"),
-      where("userId", "==", "alice"), where("sessionId", "==", "s1"));
-  await assertSucceeds(getDocs(mine));
-  const unfiltered = query(collection(alice(), "chatMessages"),
+test("the app's history query (sessionId only) works for the owner", async () => {
+  // Same query as chat_bot_widget.dart in the FlutterFlow app.
+  const q = (db) => query(collection(db, "chatMessages"),
       where("sessionId", "==", "s1"));
-  await assertFails(getDocs(unfiltered));
+  await assertSucceeds(getDocs(q(alice())));
+  await assertFails(getDocs(q(bob())));
 });
+
+test("the app may store the bot reply only in the user's own session",
+    async () => {
+      await assertSucceeds(setDoc(doc(alice(), "chatMessages/ai1"),
+          {userId: "AI", role: "ChatBot", sessionId: "s1", content: "x"}));
+      await assertFails(setDoc(doc(bob(), "chatMessages/ai2"),
+          {userId: "AI", role: "ChatBot", sessionId: "s1", content: "x"}));
+      await assertFails(setDoc(doc(alice(), "chatMessages/ai3"),
+          {userId: "AI", role: "user", sessionId: "s1", content: "x"}));
+    });
 
 test("the FlutterFlow editor account keeps access", async () => {
   const ff = env.authenticatedContext("ff",
