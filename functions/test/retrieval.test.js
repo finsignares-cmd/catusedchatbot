@@ -103,3 +103,16 @@ test("knowledge selection ignores stop-words", () => {
   assert.equal(k[0].title, "Why Maintenance Records Matter");
   assert.deepEqual(selectKnowledge("do you have it?", knowledge), []);
 });
+
+test("detectLanguage (FR1)", async () => {
+  const {detectLanguage} = await import("../retrieval.js");
+  for (const q of ["¿Tienen cargadores de ruedas en Miami?",
+    "Equipos disponibles en Miami", "tienen topadoras en texas",
+    "ficha tecnica de la cat 966"]) {
+    assert.equal(detectLanguage(q), "Spanish", q);
+  }
+  for (const q of ["Do you have machines in Arizona?", "motor grader specs",
+    "Show me your excavators", "any technique question"]) {
+    assert.equal(detectLanguage(q), "English", q);
+  }
+});

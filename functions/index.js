@@ -4,7 +4,9 @@ import {GoogleGenAI} from "@google/genai";
 
 import {initializeApp} from "firebase-admin/app";
 import {getFirestore} from "firebase-admin/firestore";
-import {selectMachines, selectKnowledge} from "./retrieval.js";
+import {
+  selectMachines, selectKnowledge, detectLanguage,
+} from "./retrieval.js";
 import {buildPrompt} from "./prompt.js";
 
 initializeApp();
@@ -305,35 +307,8 @@ export const chat = functions.https.onRequest(opts, async (req, res) => {
             );
     }
 
-    let responseLanguage = "English";
-
-    const spanishWords = [
-      "qué",
-      "que",
-      "cuál",
-      "cual",
-      "precio",
-      "equipo",
-      "equipos",
-      "especificacion",
-      "especificaciones",
-      "caracteristicas",
-      "características",
-      "horas",
-      "motor",
-      "peso",
-      "capacidad",
-      "disponible",
-      "disponibles",
-    ];
-
-    if (
-      spanishWords.some((word) =>
-        lowerMessage.includes(word),
-      )
-    ) {
-      responseLanguage = "Spanish";
-    }
+    // Language of the answer (spec FR1), see retrieval.detectLanguage.
+    const responseLanguage = detectLanguage(message);
 
     let userIntent = "general";
 

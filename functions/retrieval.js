@@ -317,3 +317,35 @@ export function selectKnowledge(message, knowledge, limit = 5) {
   scored.sort((a, b) => b.score - a.score);
   return scored.slice(0, limit).map((x) => x.k);
 }
+
+const SPANISH_WORDS = new Set([
+  "que", "cual", "cuales", "cuanto", "cuantos", "cuantas", "como", "donde",
+  "hay", "tienen", "tiene", "tienes", "busco", "necesito", "quiero",
+  "de", "del", "la", "las", "los", "el", "en", "un", "una", "y", "por",
+  "para", "con", "mis", "favoritos", "equipo", "equipos", "maquina",
+  "maquinas", "precio", "horas", "peso", "disponible", "disponibles",
+  "excavadora", "excavadoras", "cargador", "cargadores", "topadora",
+  "topadoras", "motoniveladora", "motoniveladoras", "retroexcavadora",
+  "hola", "gracias", "ficha", "tecnica", "especificaciones", "muestrame",
+  "dame", "agregar", "agrega", "borrar", "eliminar", "quitar",
+]);
+const ENGLISH_WORDS = new Set([
+  "the", "do", "you", "have", "what", "which", "how", "where", "is", "are",
+  "in", "of", "for", "with", "and", "my", "show", "me", "any", "machines",
+  "machine", "equipment", "price", "hours", "weight", "available", "hello",
+  "thanks", "specs", "add", "remove", "delete", "favorites", "please",
+]);
+
+/**
+ * Language of a message: "Spanish" or "English" (spec FR1).
+ * @param {string} message User message.
+ * @return {string} Language name for the prompt.
+ */
+export function detectLanguage(message) {
+  const raw = String(message ?? "");
+  if (/[¿¡ñÑáéíóúÁÉÍÓÚ]/.test(raw)) return "Spanish";
+  const tokens = normalize(raw).split(" ");
+  const es = tokens.filter((t) => SPANISH_WORDS.has(t)).length;
+  const en = tokens.filter((t) => ENGLISH_WORDS.has(t)).length;
+  return es > en ? "Spanish" : "English";
+}

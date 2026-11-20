@@ -16,6 +16,7 @@ Each commit after the spec references the task IDs it closes.
 - [x] **T12** `docs/failure-analysis.md` with concrete failures from this data (replaces the generic analysis of slides 7 and 10).
 - [x] **T13** `docs/impact-scorecard.md` with measured numbers (slide 6) and `docs/slides_6_7_10.md` with the replacement slide text.
 - [x] **T14** CLAUDE.md before/after example captured from a real run.
+- [x] **T15** Language detection by whole words and Spanish marks (`detectLanguage`, FR1) — found by both assistants in the context experiment; measured in `eval/lang_results.md`.
 
 Owner-only steps (need Francisco's approval, not done by the assistant):
 
