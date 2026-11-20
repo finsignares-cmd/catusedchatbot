@@ -1,0 +1,118 @@
+{
+  "name": "listFavoriteMachines",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "getAll",
+        "projectId": "e-waste-a-i-clients-qhamrz",
+        "collection": "favorites",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "24429455-34e5-45ec-b130-6aba0a4c1ea4",
+      "name": "Get many documents",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleApi": {
+          "id": "AuzHiQxJhcznaF5L",
+          "name": "Google Firebase Cloud Firestore account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "listFavoriteMachines",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cd1247de-2207-47cf-a8dc-94495cb233c5",
+      "name": "Webhook",
+      "webhookId": "a67d084e-0a3c-4966-bfac-203d3e4be96c"
+    },
+    {
+      "parameters": {
+        "jsCode": "const machines = items.map(item => item.json);\n\nreturn [\n  {\n    json: {\n      success: true,\n      message: machines.length > 0\n        ? 'Found ' + machines.length + ' favorite machines.'\n        : 'No favorite machines found.',\n      machines: machines\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "3ae4e9d5-0a94-48af-9986-cc5021297f3b",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        624,
+        0
+      ],
+      "id": "0cb382a3-f15e-4e02-8e27-1af3afae4ff7",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get many documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many documents": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "tags": []
+}
