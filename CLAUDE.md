@@ -1,6 +1,7 @@
 # CLAUDE.md — context for AI coding assistants (Claude Code, Copilot, Gemini CLI)
 
-Read `spec.md`, `plan.md` and `tasks.md` before changing code. Every change
+Read `spec.md`, `plan.md` and `tasks.md` before changing code.
+Why this file exists, with a measured before/after: `docs/context-artifact-experiment.md`. Every change
 must map to a task ID in `tasks.md`; tick the box in the same commit.
 
 ## What this is

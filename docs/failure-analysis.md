@@ -39,7 +39,12 @@ measured in `eval/results.md`.
 - **Root cause, code:** the regex `/\b(?:in|en)\s+([a-zA-Z\s]+)$/i` only
   matched when the place was the last word, with no `?`, no accent and no
   `¿`. When it failed, the fallback kept every document containing any word of
-  the question, and `do`, `you` and `in` occur in every document.
+  the question. Worse, `(message + " " + history).split(/\s+/)` always ends
+  with an empty term `""` when the history is empty, and
+  `text.includes("")` is always true. So the fallback returned **every**
+  document for **every** message, `hello` included. This was found by the
+  assistant in `docs/context-artifact-experiment.md` (run A) and checked with
+  `node -e`.
 - **Scale (measured):** 10 of the 16 location queries in the test set got
   the whole catalogue. In total 13 of 16 offered at least one machine from
   another place (129 wrong-location machines in all).
