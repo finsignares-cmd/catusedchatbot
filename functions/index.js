@@ -1,10 +1,16 @@
 import * as functions from "firebase-functions";
+import {defineSecret} from "firebase-functions/params";
 import {GoogleGenAI} from "@google/genai";
 
 import {initializeApp} from "firebase-admin/app";
 import {getFirestore} from "firebase-admin/firestore";
 
 initializeApp();
+
+// Gemini API key, stored in Firebase Secret Manager:
+//   firebase functions:secrets:set GEMINI_API_KEY
+const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
+const opts = {secrets: [GEMINI_API_KEY]};
 
 // =====================================================
 // CLIENTE MCP
@@ -106,7 +112,7 @@ async function deleteFavoriteMachine(
   );
 }
 
-export const chat = functions.https.onRequest(async (req, res) => {
+export const chat = functions.https.onRequest(opts, async (req, res) => {
   try {
     const message =
       req.body?.message?.toString() || "";
@@ -139,9 +145,9 @@ export const chat = functions.https.onRequest(async (req, res) => {
       });
     }
 
-    // Gemini
+    // Gemini (key from Secret Manager, never from source code)
     const ai = new GoogleGenAI({
-      apiKey: "AIzaSyDFymVbcppXeFy6wJWIqMleCxUiNWWbIl4",
+      apiKey: GEMINI_API_KEY.value(),
     });
 
     // Firestore

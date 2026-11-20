@@ -5,7 +5,7 @@ Each commit after the spec references the task IDs it closes.
 - [x] **T1** Write `spec.md`, `plan.md`, `tasks.md` (this commit).
 - [x] **T2** Add `CLAUDE.md` (context artifact for AI coding assistants).
 - [x] **T3** Repo hygiene: fix `.gitignore`, untrack `firebase-debug.log` files, `functions/Get-ChildItem` and the root `node_modules/`; remove the unused `catusedchatbot/` init template (not referenced by `firebase.json`).
-- [ ] **T4** Remove the hard-coded Gemini key; read `GEMINI_API_KEY` with `defineSecret` (NFR1).
+- [x] **T4** Remove the hard-coded Gemini key; read `GEMINI_API_KEY` with `defineSecret` (NFR1).
 - [ ] **T5** Replace `allow read, write: if true` with per-collection rules + emulator tests (NFR2).
 - [ ] **T6** Snapshot of the catalogue (`data/snapshot/`) and verbatim copy of the old retrieval (`eval/legacy_retrieval.js`) to reproduce the failure.
 - [ ] **T7** `functions/retrieval.js`: location detection anywhere in the message, accent/punctuation-insensitive, city → state, ID/location conflict flag, stop-words (FR2, FR3, FR5, FR6, FR9) + unit tests.
