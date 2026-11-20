@@ -8,7 +8,8 @@ must map to a task ID in `tasks.md`; tick the box in the same commit.
 CatUsed chatbot: one Firebase HTTPS function `chat` (`functions/index.js`,
 Node 22, ES modules) that answers buyers of used Caterpillar machines in
 English or Spanish using Firestore data + Gemini. Favorites go through n8n
-webhooks. The UI is a FlutterFlow app (not in this repo).
+webhooks (`functions/favorites.js`; n8n runs on the owner's machine behind
+ngrok, so it can be offline). The UI is a FlutterFlow app (not in this repo).
 Firebase project: see `.firebaserc`.
 
 ## Data (Firestore, read by the function)

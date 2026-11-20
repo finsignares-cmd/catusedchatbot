@@ -42,7 +42,7 @@ catalogue has no prices).
 | FR5 | **Model queries.** "CAT 349", "cat349", "349" select that model's records. |
 | FR6 | **Category queries.** "excavators/excavadoras", "dozers/topadoras", "wheel loaders/cargadores", "motor graders/motoniveladoras", "backhoe" select that category. |
 | FR7 | Machine data in an answer (year, hours, location, specs) comes only from Firestore. The prompt forbids inventing machines, prices or locations. |
-| FR8 | Favorites: add / list / remove the last machine discussed in the session (n8n tools). |
+| FR8 | Favorites: add / list / remove / clear (n8n tools) for the signed-in user, in English and Spanish, using the machine named in the message or the last one of the session. If n8n is unreachable the bot says so; the model never claims a favorite operation. |
 | FR9 | Common words ("do", "you", "have", "in", "the", "de", "en", "hay"…) never select machines or knowledge articles by themselves. |
 
 ## 5. Non-functional requirements

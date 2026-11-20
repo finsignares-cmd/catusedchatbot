@@ -72,6 +72,9 @@ RULES
    city or elsewhere in the same state.
 6. Be brief: one line per machine (model, machine ID, year, hours,
    location), then one short helpful sentence.
+7. You cannot add, remove, list or clear favorites: only the backend does.
+   Never say a favorite operation happened. If the user asks for one, tell
+   them to say e.g. "add the CAT 349 to my favorites".
 
 Detected user intent: ${userIntent}
 Selection rule used: ${selection.reason}
