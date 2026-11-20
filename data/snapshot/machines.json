@@ -1,0 +1,254 @@
+[
+  {
+    "_id": "4TZ7Wj6aCGdqigNm4e9s",
+    "_createTime": "2026-07-25T11:23:32.235777Z",
+    "category": "Excavators",
+    "description": "Large hydraulic excavator designed for rock, quarry and mining applications.",
+    "hours": "2800",
+    "lastUpdated": "2026-07-25T11:23:00Z",
+    "location": "Florida, USA",
+    "machineId": "CAT336-2023-FL",
+    "model": "CAT 336",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 300 hp",
+      "Operating Weight: 37.5 tons",
+      "Max Digging Depth: 7.5 m"
+    ],
+    "year": "2023"
+  },
+  {
+    "_id": "5bFRoiJhyPC0Ugpl9Ohw",
+    "_createTime": "2026-07-25T11:54:38.277720Z",
+    "category": "Excavators",
+    "description": "Large excavator designed for mining, quarry and high-production earthmoving operations.",
+    "hours": "3100",
+    "lastUpdated": "2026-07-25T11:54:00Z",
+    "location": "Arizona, USA",
+    "machineId": "CAT349-2022-AZ",
+    "model": "CAT 349",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 476 hp",
+      "Operating Weight: 49 tons",
+      "Extended Reach Capability"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "AmmOv1ur64KvMy9vwP57",
+    "_createTime": "2026-07-25T12:01:15.955662Z",
+    "category": "Dozers",
+    "description": "Colorado, USA",
+    "hours": "1700",
+    "lastUpdated": "2026-07-25T12:01:00Z",
+    "location": "Colorado, USA",
+    "machineId": "CATD5-2023-CO",
+    "model": "CAT D5",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 170 hp",
+      "Operating Weight: 17700 kg",
+      "Grade Assist Technology"
+    ],
+    "year": "2023"
+  },
+  {
+    "_id": "BI6fLyr567IY5ux29b5L",
+    "_createTime": "2026-07-25T11:35:14.255640Z",
+    "category": "Motor Graders",
+    "description": "Motor grader for road construction, maintenance and site grading.",
+    "hours": "2900",
+    "lastUpdated": "2026-07-25T11:35:00Z",
+    "location": "Colorado, USA",
+    "machineId": "CAT140-2022-CO",
+    "model": "CAT 140",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 179-231 hp",
+      "Operating Weight: 19344 kg",
+      "Grade Control Technology"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "BIxEFglVlmPtNuB5UC8X",
+    "_createTime": "2026-07-25T11:50:47.153089Z",
+    "category": "Excavators",
+    "description": "High-performance hydraulic excavator designed for heavy earthmoving and construction applications.",
+    "hours": "2400",
+    "lastUpdated": "2026-07-25T11:50:00Z",
+    "location": "North Carolina, USA",
+    "machineId": "CAT330-2023-NC",
+    "model": "CAT 330",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 273 hp",
+      "Operating Weight: 30 tons",
+      "Enhanced Fuel Efficiency"
+    ],
+    "year": "2023"
+  },
+  {
+    "_id": "CmqiafFcQbhdurBogQ6Z",
+    "_createTime": "2026-07-25T11:21:33.441237Z",
+    "category": "Excavators",
+    "description": "Medium hydraulic excavator suitable for construction, utilities and earthmoving projects.",
+    "hours": "3500",
+    "lastUpdated": "2026-07-25T11:21:00Z",
+    "location": "Texas, USA",
+    "machineId": "CAT320-2022-TX",
+    "model": "CAT 320",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 162 hp\"",
+      "Operating Weight: 22.5 tons",
+      "Max Digging Depth: 6.72 m"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "DPpjvsimX98CF7TbYqGn",
+    "_createTime": "2026-07-25T12:03:15.014378Z",
+    "category": "Dozers",
+    "description": "Heavy-duty crawler dozer for mining, earthmoving and infrastructure projects.",
+    "hours": "3600",
+    "lastUpdated": "2026-07-25T12:03:00Z",
+    "location": "Arizona, USA",
+    "machineId": "CATD8-2022-WY",
+    "model": "CAT D8",
+    "sourceUrl": "High Drawbar Pull",
+    "specifications": [
+      "Engine Power: 354 hp",
+      "Operating Weight: 39000 kg",
+      "High Drawbar Pull"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "T858C7ZiKosT1Pnmxi1H",
+    "_createTime": "2026-07-25T11:30:19.595863Z",
+    "category": "Wheel Loaders",
+    "description": "Wheel loader ideal for aggregates, truck loading and quarry operations.",
+    "hours": "4100",
+    "lastUpdated": "2026-07-25T11:30:00Z",
+    "location": "Arizona, USA",
+    "machineId": "CAT950-2022-AZ",
+    "model": "CAT 950",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 249 hp",
+      "Operating Weight: 19.2 tons",
+      "Bucket Capacity: 3.4 m3"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "WFdDZKhWgTnNWMdmIVmT",
+    "_createTime": "2026-07-25T11:52:40.217347Z",
+    "category": "Excavators",
+    "description": "Large hydraulic excavator built for quarry, mining and infrastructure projects.",
+    "hours": "3900",
+    "lastUpdated": "2026-07-25T11:52:00Z",
+    "location": "Arizona, USA",
+    "machineId": "CAT340-2022-AZ",
+    "model": "CAT 340",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 346 hp",
+      "Operating Weight: 40 tons",
+      "High Breakout Force"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "YuUvFlwk4c5lGqR55fHt",
+    "_createTime": "2026-07-25T12:07:56.819478Z",
+    "category": "Backhoe Loaders",
+    "description": "Versatile backhoe loader suitable for utilities, landscaping and general construction projects.",
+    "hours": "2600",
+    "lastUpdated": "2026-07-25T12:07:00Z",
+    "location": "Miami, USA",
+    "machineId": "CAT420-2022-GA",
+    "model": "CAT 420",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 93 hp",
+      "Operating Weight: 11000 kg",
+      "Integrated Loader And Backhoe"
+    ],
+    "year": "2022"
+  },
+  {
+    "_id": "YzoK8FTPtahVvEwsG77U",
+    "_createTime": "2026-07-25T11:56:50.698204Z",
+    "category": "Wheel Loaders",
+    "description": "High-productivity wheel loader for aggregates, construction and mining operations.",
+    "hours": "2200",
+    "lastUpdated": "2026-07-25T11:56:00Z",
+    "location": "Miami, USA",
+    "machineId": "CAT966-2023-NV",
+    "model": "CAT 966",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 321 hp",
+      "Operating Weight: 23 tons",
+      "Advanced Payload Technology"
+    ],
+    "year": "2023"
+  },
+  {
+    "_id": "kjUkixTm876STXn2mAVm",
+    "_createTime": "2026-07-25T11:59:09.355006Z",
+    "category": "Wheel Loaders",
+    "description": "Large wheel loader designed for quarry and mining production environments.",
+    "hours": "5400",
+    "lastUpdated": "2026-07-25T11:59:00Z",
+    "location": "Utah, USA",
+    "machineId": "CAT980-2021-UT",
+    "model": "CAT 980",
+    "sourceUrl": "High-Capacity Bucket Options",
+    "specifications": [
+      "Engine Power: 420 hp",
+      "Operating Weight: 30 tons",
+      "High-Capacity Bucket Options"
+    ],
+    "year": "2021"
+  },
+  {
+    "_id": "tIpTzBOneyR5x382Qwiw",
+    "_createTime": "2026-07-25T12:05:43.777172Z",
+    "category": "Motor Graders",
+    "description": "Motor grader engineered for road building, maintenance and finish grading applications.",
+    "hours": "4500",
+    "lastUpdated": "2026-07-25T12:05:00Z",
+    "location": "Texas, USA",
+    "machineId": "CAT150-2021-TX",
+    "model": "CAT 150",
+    "sourceUrl": "Integrated Grade Technology",
+    "specifications": [
+      "Engine Power: 252 hp",
+      "Operating Weight: 20500 kg",
+      "Integrated Grade Technology"
+    ],
+    "year": "2021"
+  },
+  {
+    "_id": "wrqgNPHe7p2aE69Mx4Wg",
+    "_createTime": "2026-07-25T11:32:38.421398Z",
+    "category": "Dozers",
+    "description": "Track-type tractor for earthmoving, grading and site preparation.",
+    "hours": "5200",
+    "lastUpdated": "2026-07-25T11:32:00Z",
+    "location": "Nevada, USA",
+    "machineId": "CATD6-2021-NV",
+    "model": "CAT D6",
+    "sourceUrl": "https://www.cat.com",
+    "specifications": [
+      "Engine Power: 215 hp",
+      "Operating Weight: 23000 kg",
+      "Automatic 4-Speed Transmission"
+    ],
+    "year": "2021"
+  }
+]

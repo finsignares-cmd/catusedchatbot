@@ -1,10 +1,20 @@
 import * as functions from "firebase-functions";
+import {defineSecret} from "firebase-functions/params";
 import {GoogleGenAI} from "@google/genai";
 
 import {initializeApp} from "firebase-admin/app";
 import {getFirestore} from "firebase-admin/firestore";
+import {
+  selectMachines, selectKnowledge, detectLanguage,
+} from "./retrieval.js";
+import {buildPrompt} from "./prompt.js";
 
 initializeApp();
+
+// Gemini API key, stored in Firebase Secret Manager:
+//   firebase functions:secrets:set GEMINI_API_KEY
+const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
+const opts = {secrets: [GEMINI_API_KEY]};
 
 // =====================================================
 // CLIENTE MCP
@@ -106,7 +116,7 @@ async function deleteFavoriteMachine(
   );
 }
 
-export const chat = functions.https.onRequest(async (req, res) => {
+export const chat = functions.https.onRequest(opts, async (req, res) => {
   try {
     const message =
       req.body?.message?.toString() || "";
@@ -139,9 +149,9 @@ export const chat = functions.https.onRequest(async (req, res) => {
       });
     }
 
-    // Gemini
+    // Gemini (key from Secret Manager, never from source code)
     const ai = new GoogleGenAI({
-      apiKey: "AIzaSyDFymVbcppXeFy6wJWIqMleCxUiNWWbIl4",
+      apiKey: GEMINI_API_KEY.value(),
     });
 
     // Firestore
@@ -297,43 +307,8 @@ export const chat = functions.https.onRequest(async (req, res) => {
             );
     }
 
-    const locationMatch =
-      message.match(/\b(?:in|en)\s+([a-zA-Z\s]+)$/i);
-
-    const requestedLocation =
-      locationMatch ?
-        locationMatch[1].trim().toLowerCase() :
-        null;
-
-    let responseLanguage = "English";
-
-    const spanishWords = [
-      "qué",
-      "que",
-      "cuál",
-      "cual",
-      "precio",
-      "equipo",
-      "equipos",
-      "especificacion",
-      "especificaciones",
-      "caracteristicas",
-      "características",
-      "horas",
-      "motor",
-      "peso",
-      "capacidad",
-      "disponible",
-      "disponibles",
-    ];
-
-    if (
-      spanishWords.some((word) =>
-        lowerMessage.includes(word),
-      )
-    ) {
-      responseLanguage = "Spanish";
-    }
+    // Language of the answer (spec FR1), see retrieval.detectLanguage.
+    const responseLanguage = detectLanguage(message);
 
     let userIntent = "general";
 
@@ -399,159 +374,53 @@ export const chat = functions.https.onRequest(async (req, res) => {
       machinesSnap,
       knowledgeSnap,
       categoriesSnap,
+      sessionDoc,
     ] = await Promise.all([
       db.collection("machines").limit(100).get(),
       db.collection("knowledge").limit(100).get(),
       db.collection("machineCategories").get(),
+      sessionId ?
+        db.collection("chatSessions").doc(sessionId).get() :
+        Promise.resolve(null),
     ]);
 
-    const searchTerms = (
-      message +
-      " " +
-      conversationHistory
-    )
-        .toLowerCase()
-        .split(/\s+/);
+    const machines = machinesSnap.docs.map((doc) =>
+      ({id: doc.id, ...doc.data()}));
+    const knowledgeDocs = knowledgeSnap.docs.map((doc) => doc.data());
+    const categories = categoriesSnap.docs.map((doc) => doc.data());
 
-    const knowledgeContext = [];
-
-    knowledgeSnap.forEach((doc) => {
-      const data = doc.data();
-      const text = JSON.stringify(data).toLowerCase();
-
-      if (
-        searchTerms.some((term) =>
-          text.includes(term),
-        )
-      ) {
-        knowledgeContext.push(data);
-      }
+    // Retrieval (functions/retrieval.js): location only from the
+    // `location` field, ID/location conflicts kept apart (spec FR2-FR9).
+    const selection = selectMachines(message, machines, {
+      lastMachineId: sessionDoc?.data()?.lastMachineId,
     });
+    const knowledgeContext = selectKnowledge(message, knowledgeDocs);
 
-    const machineContext = [];
+    console.log("SELECTION:", JSON.stringify({
+      reason: selection.reason,
+      location: selection.location,
+      matches: selection.matches.map((m) => m.machineId),
+      conflicts: selection.conflicts.map((m) => m.machineId),
+    }));
 
-    machinesSnap.forEach((doc) => {
-      const data = doc.data();
-
-      const text =
-    JSON.stringify(data).toLowerCase();
-
-      let includeMachine = false;
-
-      if (requestedLocation) {
-        if (text.includes(requestedLocation)) {
-          includeMachine = true;
-        }
-      } else {
-        if (
-          searchTerms.some((term) =>
-            text.includes(term),
-          )
-        ) {
-          includeMachine = true;
-        }
-      }
-
-      if (includeMachine) {
-        machineContext.push({
-          id: doc.id,
-          ...data,
-        });
-      }
-    });
-
-    /* AGREGAR DESDE AQUÍ */
-
-    console.log(
-        "machineContext final:",
-        JSON.stringify(machineContext),
-    );
-
-    console.log(
-        "sessionId:",
-        sessionId,
-    );
-
-    console.log(
-        "machineContext final:",
-        JSON.stringify(machineContext),
-    );
-
-    console.log(
-        "SESSION ID VALUE:",
-        JSON.stringify(sessionId),
-    );
-
-    console.log(
-        "MACHINE LENGTH VALUE:",
-        machineContext.length,
-    );
-
-    if (
-      machineContext.length > 0 &&
-  sessionId
-    ) {
-      console.log(
-          "ABOUT TO SAVE SESSION:",
-          sessionId,
-      );
-
-      await db
-          .collection("chatSessions")
-          .doc(sessionId)
-          .set({
-            lastMachineId: machineContext[0].id,
-            lastMachineModel:
-          machineContext[0].model ||
-          machineContext[0].machineModel ||
-          "",
-          }, {
-            merge: true,
-          });
-
-      console.log(
-          "SESSION SAVED SUCCESSFULLY",
-      );
+    // Remember the machine only when the answer is about exactly one.
+    if (sessionId && selection.matches.length === 1) {
+      const only = selection.matches[0];
+      await db.collection("chatSessions").doc(sessionId).set({
+        lastMachineId: only.machineId,
+        lastMachineModel: only.model || "",
+      }, {merge: true});
     }
 
-    /* HASTA AQUÍ */
-
-    const categoryContext = [];
-
-    categoriesSnap.forEach((doc) => {
-      categoryContext.push({
-        id: doc.id,
-        ...doc.data(),
-      });
+    const prompt = buildPrompt({
+      message,
+      language: responseLanguage,
+      userIntent,
+      conversationHistory,
+      selection,
+      knowledge: knowledgeContext,
+      categories,
     });
-
-    /* FIN */
-
-    const ragContext =
-      "KNOWLEDGE: " +
-      JSON.stringify(knowledgeContext) +
-      " MACHINE CATEGORIES: " +
-      JSON.stringify(categoryContext) +
-      " MACHINES: " +
-      JSON.stringify(machineContext);
-
-    const prompt = `
-You are CatUsed's virtual assistant.
-
-Always answer in ${responseLanguage}.
-
-Detected user intent:
-${userIntent}
-
-CONVERSATION HISTORY:
-${conversationHistory}
-
-CONTEXT:
-${ragContext}
-
-USER MESSAGE:
-${message}
-`;
 
     const response =
       await ai.models.generateContent({
