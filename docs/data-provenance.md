@@ -59,8 +59,10 @@ dealer feed.
   the pre-fix baseline used for all measurements.
 - **D4 and D5 corrected in production on 2026-11-20** with `--fix-auto`: the
   3 `sourceUrl` fields set to `https://www.cat.com`, and the stray quote
-  removed from the CAT 320 spec. A live dry-run afterwards finds only D3 (the
-  CAT D5 description), which needs a real description written by hand.
+  removed from the CAT 320 spec. - **D3 corrected on 2026-11-20:** the CAT D5 description is now "Mid-size
+  crawler dozer for grading, site preparation and general earthmoving, with
+  Grade Assist technology." (written from its own record: category, specs).
+  A live dry-run afterwards finds 0 defects in the 14 machines.
 - D6–D9 are documented, not yet fixed.
 
 ## Rights and privacy

@@ -64,4 +64,4 @@ code had no check for it.
 - **Data fixed at the source:** the 3 contradictory records were corrected
   in production (the ID's state was the true one), so a live run of "machines
   in Arizona" now returns only the 3 Arizona machines.
-- **Still open:** one false positive (Q23) and minor data defects (D3, D6–D9).
+- **Still open:** one false positive (Q23) and minor defects in categories and knowledge articles (D6–D9).
