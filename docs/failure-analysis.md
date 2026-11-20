@@ -73,5 +73,9 @@ measured in `eval/results.md`.
   is a false positive. It is left visible in the results, not tuned away.
 - **The data defects D1–D9** (`docs/data-provenance.md`) remain in
   production until the owner applies the fixes.
-- **End-to-end answers** (what Gemini actually writes) are not measured yet:
-  `eval/run_e2e.mjs` is ready but needs the rotated Gemini key.
+- **End-to-end (measured 2026-11-20, `eval/e2e_results.md`):** with the old
+  code, Gemini told the buyer a machine was in the requested place when it was
+  not in 8 of 16 location questions (e.g. "Located in Arizona
+  (`CATD8-2022-WY`)"). With the new code: 0 of 16. One wording issue remains:
+  Q13 says "no confirmed machines in Florida" when it means "no confirmed
+  backhoe".

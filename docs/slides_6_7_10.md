@@ -14,12 +14,13 @@ Copy into the deck. All numbers come from `docs/impact-scorecard.md`.
 | Questions answered with exactly the right machines | 4 / 24 | 23 / 24 |
 | Location questions showing a machine from another state | 13 / 16 | 0 / 16 |
 | Context sent to the AI per question | 13,975 chars | 1,157 chars (−92 %) |
+| Gemini answers saying a machine is in a state where it is not | 8 / 16 | 0 / 16 |
+| Median answer time (Gemini call) | 1.23 s | 1.06 s |
 | Security rule tests passed | 1 / 8 | 8 / 8 |
 | API keys in code | 1 | 0 |
 
 Footer: *Source: `eval/results.md`, `eval/rules_results.md` (repo branch
-l1-resubmission, 2026-11-20). End-to-end Gemini answer accuracy: pending key
-rotation, see `eval/run_e2e.mjs`.*
+l1-resubmission, 2026-11-20); Gemini answers: `eval/e2e_results.md`.*
 
 ---
 

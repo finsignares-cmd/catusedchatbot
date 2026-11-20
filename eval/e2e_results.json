@@ -1,0 +1,362 @@
+[
+  {
+    "id": "Q01",
+    "variant": "old",
+    "query": "Do you have machines in Arizona?",
+    "ms": 1587,
+    "promptChars": 16377,
+    "answer": "Yes, we currently have several machines located in Arizona:\n\n*   **CAT 349 Excavator** (2022) - Located in Arizona (`CAT349-2022-AZ`) with 3,100 hours.\n*   **CAT D8 Dozer** (2022) - Located in Arizona (`CATD8-2022-WY`) with 3,600 hours.\n*   **CAT 950 Wheel Loader** (2022) - Located in Arizona (`CAT950-2022-AZ`) with 4,100 hours.\n*   **CAT 340 Excavator** (2022) - Located in Arizona (`CAT340-2022-AZ`) with 3,900 hours.\n\nWould you like more details or specifications on any of these specific machines?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q01",
+    "variant": "new",
+    "query": "Do you have machines in Arizona?",
+    "ms": 1058,
+    "promptChars": 3453,
+    "answer": "- CAT 349, CAT349-2022-AZ, 2022, 3100 hours, Arizona, USA\n- CAT 950, CAT950-2022-AZ, 2022, 4100 hours, Arizona, USA\n- CAT 340, CAT340-2022-AZ, 2022, 3900 hours, Arizona, USA\n- CAT D8, CATD8-2022-WY, 2022, 3600 hours, Arizona, USA (Location must be confirmed with CatUsed staff, ID/location mismatch: CATD8-2022-WY, Arizona, USA)\n\nSince our catalogue has no prices, would you like me to connect you with CatUsed staff for pricing details?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q02",
+    "variant": "old",
+    "query": "machines in arizona",
+    "ms": 1737,
+    "promptChars": 12156,
+    "answer": "Here are the available machines located in Arizona, USA:\n\n1. **CAT 349 (Excavator)**\n   - **Year:** 2022\n   - **Hours:** 3,100\n   - **Machine ID:** CAT349-2022-AZ\n   - **Description:** Large excavator designed for mining, quarry, and high-production earthmoving operations.\n   - **Specifications:** Engine Power: 476 hp | Operating Weight: 49 tons | Extended Reach Capability\n\n2. **CAT D8 (Dozer)**\n   - **Year:** 2022\n   - **Hours:** 3,600\n   - **Machine ID:** CATD8-2022-WY\n   - **Description:** Heavy-duty crawler dozer for mining, earthmoving, and infrastructure projects.\n   - **Specifications:** Engine Power: 354 hp | Operating Weight: 39,000 kg | High Drawbar Pull\n\n3. **CAT 950 (Wheel Loader)**\n   - **Year:** 2022\n   - **Hours:** 4,100\n   - **Machine ID:** CAT950-2022-AZ\n   - **Description:** Wheel loader ideal for aggregates, truck loading, and quarry operations.\n   - **Specifications:** Engine Power: 249 hp | Operating Weight: 19.2 tons | Bucket Capacity: 3.4 m³\n\n4. **CAT 340 (Excavator)**\n   - **Year:** 2022\n   - **Hours:** 3,900\n   - **Machine ID:** CAT340-2022-AZ\n   - **Description:** Large hydraulic excavator built for quarry, mining, and infrastructure projects.\n   - **Specifications:** Engine Power: 346 hp | Operating Weight: 40 tons | High Breakout Force\n\nIf you would like to compare any of these machines or need help with maintenance records, machine hours, or transportation planning, just let me know!",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q02",
+    "variant": "new",
+    "query": "machines in arizona",
+    "ms": 1072,
+    "promptChars": 3440,
+    "answer": "CAT 349, CAT349-2022-AZ, 2022, 3100 hours, Arizona, USA\nCAT 950, CAT950-2022-AZ, 2022, 4100 hours, Arizona, USA\nCAT 340, CAT340-2022-AZ, 2022, 3900 hours, Arizona, USA\nAdditionally, machine CAT D8 (ID: CATD8-2022-WY) has an unconfirmed location (location field: \"Arizona, USA\") that must be verified with CatUsed staff.\nSince our catalogue does not list prices, would you like me to connect you with CatUsed staff for pricing details?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q03",
+    "variant": "old",
+    "query": "What equipment do you have in Miami?",
+    "ms": 1190,
+    "promptChars": 16381,
+    "answer": "We currently have the following equipment available in Miami, USA:\n\n1. **CAT 420 (Backhoe Loader)**\n   - **Year:** 2022\n   - **Hours:** 2,600\n   - **Machine ID:** CAT420-2022-GA\n   - **Specifications:** 93 hp Engine Power, 11,000 kg Operating Weight, Integrated Loader and Backhoe\n\n2. **CAT 966 (Wheel Loader)**\n   - **Year:** 2023\n   - **Hours:** 2,200\n   - **Machine ID:** CAT966-2023-NV\n   - **Specifications:** 321 hp Engine Power, 23 tons Operating Weight, Advanced Payload Technology\n\nLet me know if you would like more details on either of these machines or if you're looking for equipment in other locations!",
+    "wrong": [
+      "CAT420-2022-GA",
+      "CAT966-2023-NV"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q03",
+    "variant": "new",
+    "query": "What equipment do you have in Miami?",
+    "ms": 1320,
+    "promptChars": 3282,
+    "answer": "There are no confirmed machines in Miami, but we have one machine elsewhere in Florida, and two units with unconfirmed locations.\n- CAT 336, ID: CAT336-2023-FL, 2023, 2800 hours, Florida, USA\n- CAT 420, ID: CAT420-2022-GA, 2022, 2600 hours, location: Miami, USA (Location must be confirmed with CatUsed staff)\n- CAT 966, ID: CAT966-2023-NV, 2023, 2200 hours, location: Miami, USA (Location must be confirmed with CatUsed staff)\nSince our catalogue does not list prices, would you like me to connect you with CatUsed staff for pricing and details?",
+    "wrong": [
+      "CAT420-2022-GA",
+      "CAT966-2023-NV"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q04",
+    "variant": "old",
+    "query": "Equipos disponibles en Miami",
+    "ms": 1270,
+    "promptChars": 11372,
+    "answer": "Actualmente tenemos los siguientes equipos disponibles en Miami, EE. UU.:\n\n1. **CAT 420 (Año 2022)**\n   - **Categoría:** Retroexcavadoras (*Backhoe Loaders*)\n   - **Horas:** 2,600 horas\n   - **ID de máquina:** CAT420-2022-GA\n   - **Especificaciones:** Potencia del motor de 93 hp, peso operativo de 11,000 kg, cargadora y retroexcavadora integrada. Versátil para servicios públicos, paisajismo y proyectos de construcción general.\n\n2. **CAT 966 (Año 2023)**\n   - **Categoría:** Cargadores de ruedas (*Wheel Loaders*)\n   - **Horas:** 2,200 horas\n   - **ID de máquina:** CAT966-2023-NV\n   - **Especificaciones:** Potencia del motor de 321 hp, peso operativo de 23 toneladas, tecnología avanzada de carga útil. Ideal para agregados, construcción y operaciones mineras de alta productividad.\n\n¿Te gustaría obtener más detalles sobre alguno de estos equipos o necesitas ayuda con las opciones de transporte y comparación?",
+    "wrong": [
+      "CAT420-2022-GA",
+      "CAT966-2023-NV"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q04",
+    "variant": "new",
+    "query": "Equipos disponibles en Miami",
+    "ms": 1115,
+    "promptChars": 3274,
+    "answer": "No hay máquinas confirmadas en Miami, pero tenemos una en Florida y dos con ubicación por confirmar.\n- CAT 336 (ID: CAT336-2023-FL, 2023, 2800 horas, Florida, USA).\n- CAT 420 (ID: CAT420-2022-GA, 2022, 2600 horas, Miami, USA) - Ubicación no confirmada: el sufijo del ID indica GA pero la ubicación dice Miami, USA.\n- CAT 966 (ID: CAT966-2023-NV, 2023, 2200 horas, Miami, USA) - Ubicación no confirmada: el sufijo del ID indica NV pero la ubicación dice Miami, USA.\nComo nuestro catálogo no muestra precios, ¿desea que lo conéctemos con el personal de CatUsed para más detalles?",
+    "wrong": [
+      "CAT420-2022-GA",
+      "CAT966-2023-NV"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q05",
+    "variant": "old",
+    "query": "¿Qué excavadoras hay en Arizona?",
+    "ms": 1211,
+    "promptChars": 16377,
+    "answer": "Basado en nuestro inventario actual, las excavadoras disponibles en Arizona son:\n\n1. **CAT 349** (Modelo 2022)\n   - **ID de máquina:** CAT349-2022-AZ\n   - **Horas:** 3,100\n   - **Descripción:** Excavadora grande diseñada para operaciones de minería, canteras y movimiento de tierras de alta producción.\n   - **Especificaciones:** \n     - Potencia del motor: 476 hp\n     - Peso operativo: 49 toneladas\n     - Capacidad de alcance extendido\n\n2. **CAT 340** (Modelo 2022)\n   - **ID de máquina:** CAT340-2022-AZ\n   - **Horas:** 3,900\n   - **Descripción:** Gran excavadora hidráulica construida para proyectos de canteras, minería e infraestructura.\n   - **Especificaciones:** \n     - Potencia del motor: 346 hp\n     - Peso operativo: 40 toneladas\n     - Alta fuerza de arranque\n\n¿Te gustaría obtener más detalles sobre alguna de estas máquinas o conocer opciones en otras ubicaciones?",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q05",
+    "variant": "new",
+    "query": "¿Qué excavadoras hay en Arizona?",
+    "ms": 1025,
+    "promptChars": 3720,
+    "answer": "CAT 349, ID: CAT349-2022-AZ, 2022, 3100 horas, Arizona, USA\nCAT 340, ID: CAT340-2022-AZ, 2022, 3900 horas, Arizona, USA\nComo nuestro catálogo no incluye precios, ¿le gustaría que lo conecte con el personal de CatUsed para obtener más información?",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q06",
+    "variant": "old",
+    "query": "Show me wheel loaders in Arizona",
+    "ms": 1045,
+    "promptChars": 12169,
+    "answer": "Here are the wheel loaders available in Arizona:\n\n* **Model:** CAT 950\n  * **Category:** Wheel Loaders\n  * **Year:** 2022\n  * **Hours:** 4,100\n  * **Location:** Arizona, USA\n  * **Description:** Wheel loader ideal for aggregates, truck loading and quarry operations.\n  * **Specifications:** \n    * Engine Power: 249 hp\n    * Operating Weight: 19.2 tons\n    * Bucket Capacity: 3.4 m3\n\nLet me know if you would like more details about this machine or need help comparing it with other equipment!",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q06",
+    "variant": "new",
+    "query": "Show me wheel loaders in Arizona",
+    "ms": 1077,
+    "promptChars": 3158,
+    "answer": "CAT 950 (ID: CAT950-2022-AZ, Year: 2022, Hours: 4100, Location: Arizona, USA)\nOur catalogue has no prices listed, so please contact CatUsed staff for pricing details.",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q07",
+    "variant": "old",
+    "query": "Any dozers in Wyoming?",
+    "ms": 1471,
+    "promptChars": 16367,
+    "answer": "Based on our current inventory, we do have a heavy-duty crawler dozer located in **Wyoming**:\n\n* **Model:** CAT D8 (`CATD8-2022-WY`)\n* **Category:** Dozers\n* **Year:** 2022\n* **Hours:** 3,600 hours\n* **Location:** Arizona, USA *(Note: Although the machine ID lists \"WY\", the current location is recorded as Arizona, USA)*\n* **Specifications:** \n  * Engine Power: 354 hp\n  * Operating Weight: 39,000 kg\n  * High Drawbar Pull\n\nIf you are looking to transport this machine or explore other options nearby, equipment availability can often be expanded by considering machines from neighboring states. Let me know if you would like more details or help with transportation planning!",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q07",
+    "variant": "new",
+    "query": "Any dozers in Wyoming?",
+    "ms": 875,
+    "promptChars": 2677,
+    "answer": "There are no confirmed dozers in Wyoming. \n\nWe do have one unconfirmed machine with a Wyoming ID: CAT D8 (ID: CATD8-2022-WY, Year: 2022, Hours: 3600, Location: Arizona, USA), but its location must be confirmed with CatUsed staff due to contradictory data. \n\nSince our catalogue has no prices, would you like me to connect you with CatUsed staff for pricing and location details?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q08",
+    "variant": "old",
+    "query": "Do you have anything in Georgia?",
+    "ms": 1127,
+    "promptChars": 16377,
+    "answer": "Yes! We currently have a versatile **CAT 420** backhoe loader located in **Miami, USA** (though it is listed with a Georgia machine ID: `CAT420-2022-GA`). \n\nHere are the key details for this machine:\n* **Model:** CAT 420\n* **Year:** 2022\n* **Hours:** 2,600 hours\n* **Location:** Miami, USA\n* **Engine Power:** 93 hp\n* **Operating Weight:** 11,000 kg\n\nAdditionally, if you are looking to expand your options, equipment availability often varies by region, and many buyers consider machines from nearby states and arrange transportation. \n\nWould you like more details on this machine or help looking into transportation options?",
+    "wrong": [
+      "CAT420-2022-GA"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q08",
+    "variant": "new",
+    "query": "Do you have anything in Georgia?",
+    "ms": 981,
+    "promptChars": 2527,
+    "answer": "There are no confirmed machines in Georgia. However, we have one machine with conflicting location data: CAT 420, ID: CAT420-2022-GA, Year: 2022, Hours: 2600, Location field: Miami, USA (the ID suggests Georgia, but its location must be confirmed with CatUsed staff). Since our catalogue does not list prices, would you like me to connect you with CatUsed staff for more details?",
+    "wrong": [
+      "CAT420-2022-GA"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q09",
+    "variant": "old",
+    "query": "machines in Texas",
+    "ms": 1145,
+    "promptChars": 11364,
+    "answer": "Here are the machines currently available in Texas:\n\n1. **CAT 320** (Excavators)\n   - **Year:** 2022\n   - **Hours:** 3,500\n   - **Location:** Texas, USA\n   - **Description:** Medium hydraulic excavator suitable for construction, utilities, and earthmoving projects.\n   - **Specifications:** 162 hp, Operating Weight: 22.5 tons, Max Digging Depth: 6.72 m\n\n2. **CAT 150** (Motor Graders)\n   - **Year:** 2021\n   - **Hours:** 4,500\n   - **Location:** Texas, USA\n   - **Description:** Motor grader engineered for road building, maintenance, and finish grading applications.\n   - **Specifications:** 252 hp, Operating Weight: 20,500 kg, Integrated Grade Technology\n\nLet me know if you would like to compare these options or need help with anything else!",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q09",
+    "variant": "new",
+    "query": "machines in Texas",
+    "ms": 953,
+    "promptChars": 2727,
+    "answer": "- CAT 320 (ID: CAT320-2022-TX, 2022, 3500 hours, Texas, USA)\n- CAT 150 (ID: CAT150-2021-TX, 2021, 4500 hours, Texas, USA)\nPlease contact CatUsed staff for pricing details and to connect with our team.",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q10",
+    "variant": "old",
+    "query": "¿Tienen equipos en Colorado?",
+    "ms": 1230,
+    "promptChars": 16373,
+    "answer": "¡Sí! Actualmente contamos con equipos disponibles en el estado de **Colorado, EE. UU.** \n\nEntre ellos se encuentran:\n\n* **CAT D5 (Topadora / Dozer - Modelo 2023):** Con 1,700 horas de uso. Cuenta con una potencia de motor de 170 hp y tecnología *Grade Assist*.\n* **CAT 140 (Motoniveladora / Motor Grader - Modelo 2022):** Con 2,900 horas de uso. Ideal para construcción y mantenimiento de carreteras, equipada con tecnología de control de pendientes.\n\n¿Te interesa alguno de estos modelos en particular o buscas algún tipo de máquina en específico?",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q10",
+    "variant": "new",
+    "query": "¿Tienen equipos en Colorado?",
+    "ms": 990,
+    "promptChars": 2639,
+    "answer": "- CAT D5, CATD5-2023-CO, 2023, 1700 horas, Colorado, USA\n- CAT 140, CAT140-2022-CO, 2022, 2900 horas, Colorado, USA\nComo nuestro catálogo no incluye precios, ¿desea que le conecte con el personal de CatUsed para más información?",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q11",
+    "variant": "old",
+    "query": "Excavators in North Carolina",
+    "ms": 1580,
+    "promptChars": 10947,
+    "answer": "Here is the excavator available in North Carolina based on our current inventory:\n\n* **Model:** CAT 330 (2023)\n* **Machine ID:** CAT330-2023-NC\n* **Location:** North Carolina, USA\n* **Hours:** 2,400 hours\n* **Specifications:** \n  * Engine Power: 273 hp\n  * Operating Weight: 30 tons\n  * Enhanced Fuel Efficiency\n* **Description:** High-performance hydraulic excavator designed for heavy earthmoving and construction applications.\n\nIf you are evaluating this machine, remember that machine hours (along with a complete maintenance history) are key indicators when assessing used equipment. Let me know if you would like more tips on what to inspect or how to compare it with other models!",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q11",
+    "variant": "new",
+    "query": "Excavators in North Carolina",
+    "ms": 898,
+    "promptChars": 3482,
+    "answer": "- CAT 330, ID: CAT330-2023-NC, 2023, 2400 hours, North Carolina, USA\nSince our catalogue does not list prices, please contact CatUsed staff to get pricing and more details for this machine.",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q12",
+    "variant": "old",
+    "query": "What do you have in Nevada?",
+    "ms": 1454,
+    "promptChars": 16372,
+    "answer": "Here are the machines currently available in **Nevada**:\n\n1. **CAT D6 (Dozer)**\n   - **Year:** 2021\n   - **Hours:** 5,200 hours\n   - **Machine ID:** `CATD6-2021-NV`\n   - **Specifications:** 215 hp, 23,000 kg operating weight, Automatic 4-Speed Transmission.\n\n2. **CAT 966 (Wheel Loader)**\n   - **Year:** 2023\n   - **Hours:** 2,200 hours\n   - **Machine ID:** `CAT966-2023-NV`\n   - **Specifications:** 321 hp, 23 tons operating weight, Advanced Payload Technology.\n\nLet me know if you would like more details on either of these machines!",
+    "wrong": [
+      "CAT966-2023-NV"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q12",
+    "variant": "new",
+    "query": "What do you have in Nevada?",
+    "ms": 994,
+    "promptChars": 2810,
+    "answer": "- CAT D6, CATD6-2021-NV, 2021, 5200 hours, Nevada, USA\nWe also have one machine whose location is currently unconfirmed: CAT 966 (ID: CAT966-2023-NV, location field says \"Miami, USA\").\nSince our catalogue does not list prices, would you like me to connect you with CatUsed staff for pricing details?",
+    "wrong": [
+      "CAT966-2023-NV"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q13",
+    "variant": "old",
+    "query": "Do you have a backhoe in Florida?",
+    "ms": 1058,
+    "promptChars": 16378,
+    "answer": "Yes, we do have a backhoe loader available in Florida! \n\nHere are the details for the machine:\n* **Model:** CAT 420 (Backhoe Loader)\n* **Year:** 2022\n* **Hours:** 2,600 hours\n* **Location:** Miami, USA (`CAT420-2022-GA`)\n* **Specifications:** \n  * Engine Power: 93 hp\n  * Operating Weight: 11,000 kg\n  * Integrated Loader And Backhoe\n\nLet me know if you would like more information about this machine or shipping options to your specific location!",
+    "wrong": [
+      "CAT420-2022-GA"
+    ],
+    "warned": false
+  },
+  {
+    "id": "Q13",
+    "variant": "new",
+    "query": "Do you have a backhoe in Florida?",
+    "ms": 1053,
+    "promptChars": 2528,
+    "answer": "There are no confirmed machines in Florida, but we have one backhoe with an unconfirmed location: CAT 420 (ID: CAT420-2022-GA, Year: 2022, Hours: 2600, Location: Miami, USA) whose location must be confirmed with CatUsed staff. Please contact CatUsed staff for pricing details and to verify the exact location of this machine.",
+    "wrong": [
+      "CAT420-2022-GA"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q14",
+    "variant": "old",
+    "query": "Utah wheel loaders",
+    "ms": 1198,
+    "promptChars": 16363,
+    "answer": "Here are the available wheel loaders located in Utah:\n\n* **CAT 980** (Model: `CAT980-2021-UT`)\n  * **Category:** Wheel Loaders\n  * **Location:** Utah, USA\n  * **Year:** 2021\n  * **Hours:** 5,400 hours\n  * **Description:** Large wheel loader designed for quarry and mining production environments.\n  * **Specifications:** \n    * Engine Power: 420 hp\n    * Operating Weight: 30 tons\n    * High-Capacity Bucket Options\n\nLet me know if you would like to compare this machine with others or need details on shipping and maintenance history!",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q14",
+    "variant": "new",
+    "query": "Utah wheel loaders",
+    "ms": 1090,
+    "promptChars": 3144,
+    "answer": "CAT 980, CAT980-2021-UT, 2021, 5400 hours, Utah, USA\nSince our catalogue has no prices, I can connect you with CatUsed staff to discuss pricing and details.",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q15",
+    "variant": "old",
+    "query": "machines in AZ",
+    "ms": 1666,
+    "promptChars": 11747,
+    "answer": "Here are the used machines currently available in Arizona (AZ):\n\n1. **CAT 349** (Excavator)\n   * **Year:** 2022\n   * **Hours:** 3,100\n   * **Location:** Arizona, USA\n   * **Description:** Large excavator designed for mining, quarry, and high-production earthmoving operations. \n   * **Specifications:** 476 hp, 49 tons operating weight, extended reach capability.\n\n2. **CAT 340** (Excavator)\n   * **Year:** 2022\n   * **Hours:** 3,900\n   * **Location:** Arizona, USA\n   * **Description:** Large hydraulic excavator built for quarry, mining, and infrastructure projects.\n   * **Specifications:** 346 hp, 40 tons operating weight, high breakout force.\n\n3. **CAT 950** (Wheel Loader)\n   * **Year:** 2022\n   * **Hours:** 4,100\n   * **Location:** Arizona, USA\n   * **Description:** Wheel loader ideal for aggregates, truck loading, and quarry operations.\n   * **Specifications:** 249 hp, 19.2 tons operating weight, 3.4 m³ bucket capacity.\n\nIf you would like more details on any of these machines or need help comparing them, feel free to ask!",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q15",
+    "variant": "new",
+    "query": "machines in AZ",
+    "ms": 1110,
+    "promptChars": 3435,
+    "answer": "- CAT 349, ID: CAT349-2022-AZ, 2022, 3100 hours, Arizona, USA\n- CAT 950, ID: CAT950-2022-AZ, 2022, 4100 hours, Arizona, USA\n- CAT 340, ID: CAT340-2022-AZ, 2022, 3900 hours, Arizona, USA\n- CAT D8, ID: CATD8-2022-WY, 2022, 3600 hours, Arizona, USA (Note: Location must be confirmed with CatUsed staff, ID suffix indicates WY while location field states \"Arizona, USA\").\n\nAs the catalogue has no prices, would you like me to connect you with CatUsed staff for pricing details?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": true
+  },
+  {
+    "id": "Q16",
+    "variant": "old",
+    "query": "¿Qué hay disponible en Phoenix?",
+    "ms": 1103,
+    "promptChars": 16376,
+    "answer": "Lo siento, actualmente no tenemos equipos disponibles en Phoenix, Arizona. Sin embargo, contamos con varias opciones en ubicaciones cercanas dentro de Arizona (como Tucson u otras zonas del estado, dependiendo del listado) y en estados vecinos como Nevada, Utah, Texas y Colorado. \n\nSi te interesa, puedo mostrarte el inventario disponible en estas ubicaciones cercanas o ayudarte a buscar un modelo específico. ¿Hay algún tipo de máquina en particular que estés buscando?",
+    "wrong": [],
+    "warned": false
+  },
+  {
+    "id": "Q16",
+    "variant": "new",
+    "query": "¿Qué hay disponible en Phoenix?",
+    "ms": 1274,
+    "promptChars": 3452,
+    "answer": "No tenemos máquinas confirmadas exactamente en Phoenix, pero estas se encuentran en el estado de Arizona:\n- CAT 349, ID: CAT349-2022-AZ, 2022, 3100 horas, Arizona, USA\n- CAT 950, ID: CAT950-2022-AZ, 2022, 4100 horas, Arizona, USA\n- CAT 340, ID: CAT340-2022-AZ, 2022, 3900 horas, Arizona, USA\nTambién hay una máquina con ubicación por confirmar: CAT D8 (ID: CATD8-2022-WY, campo de ubicación: \"Arizona, USA\").\n¿Desea que lo conecte con el personal de CatUsed para consultar precios o más detalles sobre estas opciones?",
+    "wrong": [
+      "CATD8-2022-WY"
+    ],
+    "warned": true
+  }
+]
