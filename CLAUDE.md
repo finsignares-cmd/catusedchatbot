@@ -6,7 +6,7 @@ must map to a task ID in `tasks.md`; tick the box in the same commit.
 
 ## What this is
 CatUsed chatbot: one Firebase HTTPS function `chat` (`functions/index.js`,
-Node 20, ES modules) that answers buyers of used Caterpillar machines in
+Node 22, ES modules) that answers buyers of used Caterpillar machines in
 English or Spanish using Firestore data + Gemini. Favorites go through n8n
 webhooks. The UI is a FlutterFlow app (not in this repo).
 Firebase project: see `.firebaserc`.

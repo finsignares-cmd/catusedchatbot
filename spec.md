@@ -24,7 +24,7 @@ them by hand is slow, and a generic LLM invents machines, prices and locations.
 
 ## 3. Scope
 
-In scope: the HTTPS function `chat` (Firebase Functions, Node 20), its retrieval
+In scope: the HTTPS function `chat` (Firebase Functions, Node 22), its retrieval
 of Firestore data, the Gemini prompt, the favorites tools (n8n webhooks) and the
 Firestore security rules.
 
