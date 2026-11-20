@@ -74,7 +74,8 @@ measured in `eval/results.md`.
 - **Data:** the 3 ID/location conflicts (D1) were corrected in production on
   2026-11-20. Live check afterwards: "Do you have machines in Arizona?" →
   CAT349-2022-AZ, CAT950-2022-AZ, CAT340-2022-AZ only; "Any dozers in Wyoming?"
-  → CATD8-2022-WY. Defects D3–D9 are documented but still open.
+  → CATD8-2022-WY. D4 and D5 were also corrected; D3 and D6–D9 are documented but still
+  open.
 - **End-to-end (measured 2026-11-20, `eval/e2e_results.md`):** with the old
   code, Gemini told the buyer a machine was in the requested place when it was
   not in 8 of 16 location questions (e.g. "Located in Arizona
